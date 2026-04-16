@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Stratum Customs - Sneaker Art Community</title>
+    <meta name="description" content="Join the Stratum Customs community. Connect with artists, share your customs, participate in events, and be part of the sneaker art culture.">
+    
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'stratum': '#853953',
+                        'stratum-dark': '#5E2A3C',
+                        'stratum-light': '#A54A6A',
+                        'stratum-glow': '#C06080',
+                        'canvas-light': '#F3F4F4',
+                        'canvas-dark': '#0F0F0F',
+                        'canvas-charcoal': '#1A1A1A',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Syne', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Hide global scrollbar */
+        body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        /* Navigation Styles */
+        .nav-item {
+            position: relative;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            color: #853953;
+        }
+        
+        .nav-item.active {
+            font-weight: 700;
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #853953;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 0.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid #85395320;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .dark .dropdown-menu {
+            background: #1A1A1A;
+            border-color: #85395340;
+        }
+        
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            gap: 10px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        
+        .dropdown-item:hover {
+            background: #85395310;
+            color: #853953;
+            padding-left: 1.5rem;
+        }
+        
+        .dropdown-item.active {
+            background: #85395305;
+            color: #853953;
+            font-weight: 700;
+            border-left: 3px solid #853953;
+            padding-left: 1.5rem;
+        }
+        
+        .dropdown-item i {
+            width: 18px;
+            color: #853953;
+        }
+        
+        /* Auth Buttons */
+        .auth-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .auth-btn.login {
+            background: transparent;
+            border: 1.5px solid #853953;
+            color: #853953;
+        }
+        
+        .auth-btn.login:hover {
+            background: #853953;
+            color: white;
+        }
+        
+        .auth-btn.signup {
+            background: #853953;
+            color: white;
+        }
+        
+        .auth-btn.signup:hover {
+            background: #5E2A3C;
+            transform: translateY(-2px);
+        }
+        
+        /* Toggle Buttons */
+        .toggle-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 40px;
+            background: #F0F0F0;
+            color: #853953;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .dark .toggle-btn {
+            background: #2A2A2A;
+        }
+        
+        .toggle-btn:hover {
+            background: #853953;
+            color: white;
+            transform: rotate(15deg);
+        }
+        
+        /* Community Card Styles */
+        .community-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            border: 1px solid #E8E8E8;
+        }
+        
+        .dark .community-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-8px);
+            border-color: #853953;
+            box-shadow: 0 25px 40px -15px #85395340;
+        }
+        
+        .event-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 1px solid #E8E8E8;
+        }
+        
+        .dark .event-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .event-card:hover {
+            border-color: #853953;
+            transform: translateY(-5px);
+        }
+        
+        .member-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 1px solid #E8E8E8;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        
+        .dark .member-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .member-card:hover {
+            border-color: #853953;
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            background: #853953;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary:hover {
+            background: #5E2A3C;
+            transform: scale(1.03);
+        }
+        
+        .btn-outline {
+            border: 2px solid #853953;
+            background: transparent;
+            color: #853953;
+            padding: 0.75rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline:hover {
+            background: #853953;
+            color: white;
+        }
+        
+        .shimmer-text {
+            background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        /* Social Icons */
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: #2A2A2A;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            transition: all 0.3s;
+            color: #853953;
+        }
+        
+        .social-icon:hover {
+            background: #853953;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .dark .mobile-menu {
+            background: #0F0F0F;
+        }
+        
+        .mobile-menu.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #E8E8E8;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .mobile-menu-item.active, .mobile-dropdown-content a.active {
+            border-left: 4px solid #853953;
+            background: #85395308;
+            color: #853953;
+            font-weight: 700;
+        }
+        
+        .dark .mobile-menu-item {
+            border-bottom-color: #2A2A2A;
+        }
+        
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            background: #F8F8F8;
+        }
+        
+        .dark .mobile-dropdown-content {
+            background: #1A1A1A;
+        }
+        
+        .mobile-dropdown-content.show {
+            max-height: 180px;
+        }
+        
+        .footer-heading {
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: #853953;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-heading {
+                display: block;
+                padding-bottom: 0;
+                border-left: 3px solid #853953;
+                padding-left: 0.75rem;
+            }
+            .footer-heading::after {
+                display: none;
+            }
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .footer-contact-item i {
+            width: 20px;
+            color: #853953;
+        }
+        
+        /* Stats Counter */
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #853953;
+        }
+        
+        /* Post Card */
+        .post-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 1px solid #E8E8E8;
+        }
+        
+        .dark .post-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .post-card:hover {
+            border-color: #853953;
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
+
+    <!-- ========== HEADER - SAME AS REFERENCE ========== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="bg-gray-900 px-5 py-2 rounded-full flex items-center shadow-lg transform group-hover:scale-105 transition-transform">
+                        <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                    </div>
+                </a>
+
+                <div class="hidden xl:flex items-center">
+                    <div class="flex items-center gap-8">
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <div class="dropdown-menu">
+                                <a href="index.html" class="dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+                                <a href="home2.html" class="dropdown-item"><i class="fas fa-home"></i> Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="nav-item">About</a>
+                        <a href="portfolio.html" class="nav-item">Portfolio</a>
+                        <a href="order.html" class="nav-item">Custom Orders</a>
+                        <div class="dropdown">
+                            <button class="nav-item active flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <div class="dropdown-menu">
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
+                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
+                                <a href="community.html" class="dropdown-item active"><i class="fas fa-users"></i> Community</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item">Contact</a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 ml-8">
+                        <a href="login.html" class="auth-btn login">Login</a>
+                        <a href="signup.html" class="auth-btn signup">Sign Up</a>
+                    </div>
+                    
+                    <div class="flex gap-2 ml-4">
+                        <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="rtl-toggle" class="toggle-btn">⇄</button>
+                    </div>
+                </div>
+
+                <button id="mobile-toggle" class="xl:hidden text-gray-800 dark:text-white p-2 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn flex justify-between items-center w-full mobile-menu-item">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html" class="block px-8 py-2 text-sm">Home 1</a>
+                        <a href="home2.html" class="block px-8 py-2 text-sm">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="mobile-menu-item">About</a>
+                <a href="portfolio.html" class="mobile-menu-item">Portfolio</a>
+                <a href="order.html" class="mobile-menu-item">Custom Orders</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item active">Services <i class="fas fa-chevron-down"></i></button>
+                    <div class="mobile-dropdown-content show">
+                        <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
+                        <a href="drop.html" class="block px-8 py-2 text-sm">Limited Drops</a>
+                        <a href="community.html" class="block px-8 py-2 text-sm active">Community</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="mobile-menu-item">Contact</a>
+                <div class="flex flex-col gap-3 p-6">
+                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                </div>
+                <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="relative pt-40 pb-20 md:pt-52 md:pb-28 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-stratum/5 via-transparent to-transparent"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-stratum/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 bg-stratum/10 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-stratum rounded-full"></span>
+                    <span class="text-stratum font-mono text-sm tracking-wider">JOIN THE MOVEMENT</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-display font-bold leading-tight">
+                    Sneaker Art <span class="shimmer-text">Community</span>
+                </h1>
+                <div class="w-20 h-1 bg-stratum mx-auto my-6"></div>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light">
+                    Connect with artists, share your customs, and be part of a global movement celebrating wearable art.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMMUNITY STATS ========== -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="stat-number">15K+</div>
+                    <p class="text-gray-500 text-sm">Community Members</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">8K+</div>
+                    <p class="text-gray-500 text-sm">Customs Shared</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">45+</div>
+                    <p class="text-gray-500 text-sm">Countries</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">120+</div>
+                    <p class="text-gray-500 text-sm">Events Hosted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- ========== FEATURED COMMUNITY POSTS ========== -->
+    <section class="py-16 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">COMMUNITY HIGHLIGHTS</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Latest <span class="text-stratum">Customs</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">See what our community is creating</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-7">
+                <div class="post-card p-4">
+                    <div class="rounded-xl overflow-hidden h-56">
+                        <img src="/assest/ani.jpg" alt="Custom Air Force 1 sneaker" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-full bg-stratum/20 flex items-center justify-center overflow-hidden">
+                                <img src="/assest/men.jpg" alt="user avatar" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-sm font-semibold">@sneakerhead_mike</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Just finished my custom Air Force 1s inspired by Japanese anime 🔥</p>
+                        <div class="flex gap-4 mt-3 text-xs text-gray-400">
+                            <span><i class="far fa-heart"></i> 234 likes</span>
+                            <span><i class="far fa-comment"></i> 45 comments</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-card p-4">
+                    <div class="rounded-xl overflow-hidden h-56">
+                        <img src="/assest/gal.jpg" alt="Custom Dunk Low sneaker" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-full bg-stratum/20 flex items-center justify-center overflow-hidden">
+                                <img src="/assest/women.jpg" alt="user avatar" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-sm font-semibold">@artbyjasmine</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">My latest commission - galaxy theme on Dunks ✨</p>
+                        <div class="flex gap-4 mt-3 text-xs text-gray-400">
+                            <span><i class="far fa-heart"></i> 567 likes</span>
+                            <span><i class="far fa-comment"></i> 89 comments</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-card p-4">
+                    <div class="rounded-xl overflow-hidden h-56">
+                        <img src="/assest/royal2.jpg" alt="Custom Jordan 1 High sneaker" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="w-8 h-8 rounded-full bg-stratum/20 flex items-center justify-center overflow-hidden">
+                                <img src="/assest/men1.jpg" alt="user avatar" class="w-full h-full object-cover">
+                            </div>
+                            <span class="text-sm font-semibold">@custom_kicks_la</span>
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Royal Heritage edition - limited to 50 pairs worldwide 👑</p>
+                        <div class="flex gap-4 mt-3 text-xs text-gray-400">
+                            <span><i class="far fa-heart"></i> 892 likes</span>
+                            <span><i class="far fa-comment"></i> 156 comments</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-10">
+                <button class="btn-outline text-sm">View More on Instagram <i class="fab fa-instagram ml-2"></i></button>
+            </div>
+        </div>
+    </section>
+    <!-- ========== UPCOMING EVENTS ========== -->
+    <section class="py-20 bg-canvas-light dark:bg-canvas-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">DON'T MISS OUT</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Upcoming <span class="text-stratum">Events</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Join us online or in-person</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <div class="event-card p-6">
+                    <div class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-stratum text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Virtual Paint Night</h3>
+                    <p class="text-stratum text-sm mb-3">April 25, 2026 · 7PM EST</p>
+                    <p class="text-gray-500 text-sm">Learn basic sneaker painting techniques from our lead artists.</p>
+                    <button class="mt-4 w-full py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">Register Now</button>
+                </div>
+                <div class="event-card p-6">
+                    <div class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-stratum text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">LA Studio Meetup</h3>
+                    <p class="text-stratum text-sm mb-3">May 10, 2026 · 2PM PST</p>
+                    <p class="text-gray-500 text-sm">In-person gathering at our LA studio. Meet the artists and network.</p>
+                    <button class="mt-4 w-full py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">RSVP</button>
+                </div>
+                <div class="event-card p-6">
+                    <div class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-ticket-alt text-stratum text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-1">Limited Drop #12</h3>
+                    <p class="text-stratum text-sm mb-3">May 25, 2026 · 12PM EST</p>
+                    <p class="text-gray-500 text-sm">Exclusive collab release. Members get early access.</p>
+                    <button class="mt-4 w-full py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">Set Reminder</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== COMMUNITY MEMBERS SPOTLIGHT ========== -->
+    <section class="py-20 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">TOP CONTRIBUTORS</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Community <span class="text-stratum">Stars</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Meet our most active members</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-7">
+                <div class="member-card">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-stratum to-stratum-light mx-auto flex items-center justify-center mb-3">
+                        <i class="fas fa-user text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">Sarah Chen</h3>
+                    <p class="text-stratum text-sm">Top Artist 2025</p>
+                    <p class="text-gray-500 text-xs mt-2">45 customs shared</p>
+                    <div class="flex justify-center gap-2 mt-3">
+                        <i class="fab fa-instagram text-gray-400 hover:text-stratum cursor-pointer"></i>
+                        <i class="fab fa-tiktok text-gray-400 hover:text-stratum cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-stratum-dark to-stratum mx-auto flex items-center justify-center mb-3">
+                        <i class="fas fa-user text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">Marcus Rodriguez</h3>
+                    <p class="text-stratum text-sm">Community Leader</p>
+                    <p class="text-gray-500 text-xs mt-2">Event organizer</p>
+                    <div class="flex justify-center gap-2 mt-3">
+                        <i class="fab fa-instagram text-gray-400 hover:text-stratum cursor-pointer"></i>
+                        <i class="fab fa-youtube text-gray-400 hover:text-stratum cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-br from-stratum to-stratum-glow mx-auto flex items-center justify-center mb-3">
+                        <i class="fas fa-user text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg font-bold">Aisha Johnson</h3>
+                    <p class="text-stratum text-sm">Rising Star</p>
+                    <p class="text-gray-500 text-xs mt-2">Featured custom of the month</p>
+                    <div class="flex justify-center gap-2 mt-3">
+                        <i class="fab fa-instagram text-gray-400 hover:text-stratum cursor-pointer"></i>
+                        <i class="fab fa-pinterest text-gray-400 hover:text-stratum cursor-pointer"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== JOIN DISCUSSION CTA ========== -->
+    <section class="py-20 bg-stratum">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Join the Conversation</h2>
+            <p class="text-stratum-soft max-w-md mx-auto mb-8">Connect with fellow sneaker artists on Discord</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="bg-white text-stratum px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg">
+                    <i class="fab fa-discord mr-2"></i> Join Discord
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                    <i class="fab fa-instagram mr-2"></i> Follow on IG
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER - SAME AS REFERENCE ========== -->
+    <footer class="pt-16 pb-8 bg-gray-900 dark:bg-[#0A0A0A]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <div class="flex gap-3 justify-center md:justify-start">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-stratum transition block">Custom Gallery</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Artist Roster</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Behind the Brush</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-stratum transition block">Custom Commissions</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Corporate Collabs</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Restoration</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>88 Art District, Los Angeles, CA</span>
+                        </li>
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (424) 242-8800</span>
+                        </li>
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-envelope"></i>
+                            <span>studio@stratumcustom.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-xs font-mono">
+                <p>© 2026 Stratum Custom Art Studio — Every pair is a statement. #WearTheArt</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeBtn = document.getElementById('theme-toggle');
+            const themeBtnMob = document.getElementById('theme-toggle-mobile');
+            
+            const updateThemeUI = (isDark) => {
+                [themeBtn, themeBtnMob].forEach(b => {
+                    if(b) {
+                        const moon = b.querySelector('.fa-moon');
+                        const sun = b.querySelector('.fa-sun');
+                        if(moon && sun) {
+                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                            else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
+                        }
+                    }
+                });
+            };
+
+            const toggleTheme = () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateThemeUI(isDark);
+            };
+
+            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+            
+            if(localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                updateThemeUI(true);
+            }
+            
+            // RTL Toggle
+            const rtlBtn = document.getElementById('rtl-toggle');
+            const rtlMob = document.getElementById('rtl-toggle-mobile');
+
+            const updateRtlUI = (isRtl) => {
+                const dir = isRtl ? 'rtl' : 'ltr';
+                document.documentElement.dir = dir;
+                [rtlBtn, rtlMob].forEach(b => b && b.classList.toggle('active', isRtl));
+            };
+
+            const toggleRtl = () => {
+                const isRtl = document.documentElement.dir !== 'rtl';
+                localStorage.setItem('dir', isRtl ? 'rtl' : 'ltr');
+                updateRtlUI(isRtl);
+            };
+
+            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+
+            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+            
+            // Mobile Menu
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileToggle?.querySelector('i');
+            if(mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                });
+            }
+            
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    content.classList.toggle('show');
+                    const chevron = btn.querySelector('.fa-chevron-down');
+                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                });
+            });
+
+            // Dropdowns
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                const btn = dropdown.querySelector('button');
+                btn.addEventListener('click', (e) => {
+                    if (window.innerWidth >= 1280) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        document.querySelectorAll('.dropdown').forEach(d => {
+                            if (d !== dropdown) d.classList.remove('open');
+                        });
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

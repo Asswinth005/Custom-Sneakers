@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Stratum Customs - Bespoke Sneaker Art Studio</title>
+    <meta name="description" content="Learn about Stratum Customs, our craftsmanship process, customization options, and the artists behind your custom sneakers.">
+    
+    <!-- Tailwind CSS -->
+    <script src="tailwind.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'stratum': '#853953',
+                        'stratum-dark': '#5E2A3C',
+                        'stratum-light': '#A54A6A',
+                        'stratum-glow': '#C06080',
+                        'canvas-light': '#F3F4F4',
+                        'canvas-dark': '#0F0F0F',
+                        'canvas-charcoal': '#1A1A1A',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'display': ['Syne', 'sans-serif'],
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-up': 'fadeUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' },
+                        },
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .nav-item {
+            position: relative;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-item:hover, .nav-item.active {
+            color: #853953;
+        }
+        
+        .nav-item.active {
+            font-weight: 700;
+        }
+        
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #853953;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-item:hover::after {
+            width: 100%;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 0.5rem 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            border: 1px solid #85395320;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .dark .dropdown-menu {
+            background: #1A1A1A;
+            border-color: #85395340;
+        }
+        
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            gap: 10px;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+        }
+        
+        .dropdown-item:hover {
+            background: #85395310;
+            color: #853953;
+            padding-left: 1.5rem;
+        }
+        
+        .dropdown-item i {
+            width: 18px;
+            color: #853953;
+        }
+        
+        .auth-btn {
+            padding: 0.5rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        
+        .auth-btn.login {
+            background: transparent;
+            border: 1.5px solid #853953;
+            color: #853953;
+        }
+        
+        .auth-btn.login:hover {
+            background: #853953;
+            color: white;
+        }
+        
+        .auth-btn.signup {
+            background: #853953;
+            color: white;
+        }
+        
+        .auth-btn.signup:hover {
+            background: #5E2A3C;
+            transform: translateY(-2px);
+        }
+        
+        .toggle-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 40px;
+            background: #F0F0F0;
+            color: #853953;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .dark .toggle-btn {
+            background: #2A2A2A;
+        }
+        
+        .toggle-btn:hover {
+            background: #853953;
+            color: white;
+            transform: rotate(15deg);
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: #2A2A2A;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            transition: all 0.3s;
+            color: #853953;
+        }
+        
+        .social-icon:hover {
+            background: #853953;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .mobile-menu {
+            background: #FFFFFF;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .dark .mobile-menu {
+            background: #0F0F0F;
+        }
+        
+        .mobile-menu.open {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #E8E8E8;
+            font-weight: 500;
+        }
+        
+        .dark .mobile-menu-item {
+            border-bottom-color: #2A2A2A;
+        }
+        
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            background: #F8F8F8;
+        }
+        
+        .dark .mobile-dropdown-content {
+            background: #1A1A1A;
+        }
+        
+        .mobile-dropdown-content.show {
+            max-height: 180px;
+        }
+        
+        .footer-heading {
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: #853953;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-heading {
+                display: block;
+                padding-bottom: 0;
+                border-left: 3px solid #853953;
+                padding-left: 0.75rem;
+            }
+            .footer-heading::after {
+                display: none;
+            }
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        
+        .footer-contact-item i {
+            width: 20px;
+            color: #853953;
+        }
+        
+        /* Customization Process Card */
+        .process-card {
+            background: white;
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            border: 1px solid #E8E8E8;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .process-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-8px);
+            border-color: #853953;
+            box-shadow: 0 20px 35px -12px #85395340;
+        }
+        
+        .process-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background: #853953;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Style Option Card */
+        .style-card {
+            background: white;
+            border-radius: 20px;
+            transition: all 0.3s;
+            border: 1px solid #E8E8E8;
+            cursor: pointer;
+        }
+        
+        .dark .style-card {
+            background: #121212;
+            border-color: #2A2A2A;
+        }
+        
+        .style-card:hover, .style-card.active {
+            border-color: #853953;
+            transform: translateY(-5px);
+        }
+        
+        /* Material Showcase */
+        .material-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+        
+        .material-item:hover {
+            background: #85395310;
+        }
+        
+        .shimmer-text {
+            background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 3s linear infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
+
+    <!-- ========== HEADER - SAME AS REFERENCE ========== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="bg-gray-900 px-5 py-2 rounded-full flex items-center shadow-lg transform group-hover:scale-105 transition-transform">
+                        <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                    </div>
+                </a>
+
+                <div class="hidden xl:flex items-center">
+                    <div class="flex items-center gap-8">
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <div class="dropdown-menu">
+                                <a href="index.html" class="dropdown-item"><i class="fas fa-home"></i> Home 1</a>
+                                <a href="home2.html" class="dropdown-item"><i class="fas fa-home"></i> Home 2</a>
+                            </div>
+                        </div>
+                        <a href="about.html" class="nav-item">About</a>
+                        <a href="portfolio.html" class="nav-item">Portfolio</a>
+                        <a href="order.html" class="nav-item active">Custom Orders</a>
+                        <div class="dropdown">
+                            <button class="nav-item flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <div class="dropdown-menu">
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
+                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
+                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i> Community</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item">Contact</a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 ml-8">
+                        <a href="login.html" class="auth-btn login">Login</a>
+                        <a href="signup.html" class="auth-btn signup">Sign Up</a>
+                    </div>
+                    
+                    <div class="flex gap-2 ml-4">
+                        <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="rtl-toggle" class="toggle-btn">⇄</button>
+                    </div>
+                </div>
+
+                <button id="mobile-toggle" class="xl:hidden text-gray-800 dark:text-white p-2 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu xl:hidden">
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn flex justify-between items-center w-full mobile-menu-item">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                    <div class="mobile-dropdown-content">
+                        <a href="index.html" class="block px-8 py-2 text-sm">Home 1</a>
+                        <a href="home2.html" class="block px-8 py-2 text-sm">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html" class="mobile-menu-item">About</a>
+                <a href="portfolio.html" class="mobile-menu-item">Portfolio</a>
+                <a href="order.html" class="mobile-menu-item active">Custom Orders</a>
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i class="fas fa-chevron-down"></i></button>
+                    <div class="mobile-dropdown-content">
+                        <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
+                        <a href="drop.html" class="block px-8 py-2 text-sm">Limited Drops</a>
+                        <a href="community.html" class="block px-8 py-2 text-sm">Community</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="mobile-menu-item">Contact</a>
+                <div class="flex flex-col gap-3 p-6">
+                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                </div>
+                <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION (KEPT AS IS) ========== -->
+    <section class="relative pt-40 pb-24 md:pt-52 md:pb-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-stratum/5 via-transparent to-transparent"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-stratum/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center gap-2 bg-stratum/10 backdrop-blur-sm px-5 py-2 rounded-full mb-6">
+                    <span class="w-2 h-2 bg-stratum rounded-full"></span>
+                    <span class="text-stratum font-mono text-sm tracking-wider">CUSTOMIZATION STUDIO</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-display font-bold leading-tight animate-fade-up">
+                    Your Vision, <span class="shimmer-text">Our Craft</span>
+                </h1>
+                <div class="w-20 h-1 bg-stratum mx-auto my-6"></div>
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light">
+                    From concept to completion — we transform your ideas into wearable masterpieces.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 1: CUSTOMIZATION PROCESS (4 STEPS) ========== -->
+    <section class="py-20 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">HOW IT WORKS</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Your Customization <span class="text-stratum">Journey</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Four simple steps to your dream sneakers</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="process-card p-6 text-center relative">
+                    <div class="process-number">1</div>
+                    <div class="w-16 h-16 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4 mt-2">
+                        <i class="fas fa-comment-dots text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Consultation</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Share your ideas, inspirations, and vision with our design team.</p>
+                </div>
+                <div class="process-card p-6 text-center relative">
+                    <div class="process-number">2</div>
+                    <div class="w-16 h-16 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4 mt-2">
+                        <i class="fas fa-drafting-compass text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Design Mockup</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">We create digital previews and refine until you're thrilled.</p>
+                </div>
+                <div class="process-card p-6 text-center relative">
+                    <div class="process-number">3</div>
+                    <div class="w-16 h-16 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4 mt-2">
+                        <i class="fas fa-spray-can text-stratum text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Hand-Painting</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Master artists bring your design to life with premium materials.</p>
+                </div>
+                <div class="process-card p-6 text-center relative">
+                    <div class="process-number">4</div>
+                    <div class="w-16 h-16 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4 mt-2">
+                        <i class="fas fa-box-open text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Delivery</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Quality checked, sealed, and shipped to your doorstep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: CUSTOMIZATION STYLES (WHAT YOU CAN CREATE) ========== -->
+    <section class="py-20 bg-canvas-light dark:bg-canvas-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">ENDLESS POSSIBILITIES</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Customization <span class="text-stratum">Styles</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Choose your artistic direction</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-7">
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-palette text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Hand-Painted Art</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Original illustrations, portraits, landscapes, or abstract designs.</p>
+                </div>
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dragon text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Pop Culture & Anime</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Your favorite characters, manga panels, or movie tributes.</p>
+                </div>
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-crown text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Luxury & Metallic</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Gold leaf, chrome finishes, and premium embellishments.</p>
+                </div>
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tape text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Abstract & Geometric</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Bold patterns, color blocking, and modern art aesthetics.</p>
+                </div>
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-feather-alt text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Botanical & Nature</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Florals, wildlife, and organic-inspired designs.</p>
+                </div>
+                <div class="style-card p-6 text-center">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-signature text-3xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Custom Typography</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Names, quotes, dates, or meaningful words.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ========== SECTION 3: MATERIALS & QUALITY ========== -->
+    <section class="py-20 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-stratum font-mono text-sm tracking-wider">PREMIUM MATERIALS</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold mt-3">Quality That <span class="text-stratum">Lasts</span></h2>
+                    <div class="w-16 h-1 bg-stratum my-5"></div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">We use only the finest materials to ensure your custom sneakers remain vibrant and durable for years to come.</p>
+                    <div class="space-y-3">
+                        <div class="material-item">
+                            <i class="fas fa-fill-drip text-stratum text-xl w-8"></i>
+                            <div><strong class="font-semibold">Angelus Paints</strong><p class="text-sm text-gray-500">Professional-grade leather paints used by artists worldwide</p></div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-shield-alt text-stratum text-xl w-8"></i>
+                            <div><strong class="font-semibold">Protective Sealant</strong><p class="text-sm text-gray-500">UV-resistant, waterproof finish that prevents cracking</p></div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-tachometer-alt text-stratum text-xl w-8"></i>
+                            <div><strong class="font-semibold">Premium Leather Base</strong><p class="text-sm text-gray-500">We start with authentic, high-quality sneaker silhouettes</p></div>
+                        </div>
+                        <div class="material-item">
+                            <i class="fas fa-box text-stratum text-xl w-8"></i>
+                            <div><strong class="font-semibold">Eco-Friendly Packaging</strong><p class="text-sm text-gray-500">Sustainable materials, recycled boxes, and no plastic</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-xl">
+                        <div class="bg-gradient-to-tr from-stratum to-stratum-light p-1 rounded-2xl">
+                            <div class="bg-gray-100 dark:bg-gray-800 rounded-xl h-96 flex items-center justify-center overflow-hidden">
+                                <img src="/assest/last.jpg" alt="Premium sneaker materials and quality craftsmanship" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 w-32 h-32 bg-stratum/20 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: SILHOUETTES WE CUSTOMIZE ========== -->
+    <section class="py-20 bg-canvas-light dark:bg-canvas-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">YOUR CANVAS</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Popular <span class="text-stratum">Silhouettes</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">We customize most major sneaker models</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5 text-center">
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fab fa-nike text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Air Force 1</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fab fa-nike text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Air Jordan 1</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fab fa-nike text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Dunk Low</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fab fa-adidas text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Yeezy 350</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fas fa-shoe-prints text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">New Balance</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fas fa-shoe-prints text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Vans Old Skool</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fas fa-shoe-prints text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">Converse Chuck</span>
+                </div>
+                <div class="p-4 rounded-xl hover:bg-stratum/5 transition">
+                    <i class="fas fa-shoe-prints text-4xl text-stratum mb-2 block"></i>
+                    <span class="text-sm font-medium">ASICS Gel</span>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p class="text-sm text-gray-500">+ Many more — contact us for other models</p>
+            </div>
+        </div>
+    </section>
+
+        <!-- ========== SECTION 5: ARTIST SPOTLIGHT ========== -->
+    <section class="py-20 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">MEET THE MAKERS</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Our <span class="text-stratum">Artists</span></h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-lg">
+                        <img src="/assest/per.jpg" alt="Elena Varela - Master Artist & Founder" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">Elena Varela</h3>
+                    <p class="text-stratum text-sm">Master Artist & Founder</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Specializes in photo-realistic portraits and custom murals</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-lg">
+                        <img src="/assest/per1.jpg" alt="Marcus Chen - Creative Director" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">Marcus Chen</h3>
+                    <p class="text-stratum text-sm">Creative Director</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Former Nike designer, expert in color theory and patterns</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 shadow-lg">
+                        <img src="/assest/per2.jpg" alt="Sofia Rivera - Lead Painter" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold">Sofia Rivera</h3>
+                    <p class="text-stratum text-sm">Lead Painter</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mt-2">Specializes in abstract, anime, and pop culture designs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== CTA SECTION ========== -->
+    <section class="py-20 bg-stratum">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Ready to Customize?</h2>
+            <p class="text-stratum-soft max-w-md mx-auto mb-8">Start your custom sneaker journey today. Book a free consultation.</p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <button class="bg-white text-stratum px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg">Start Your Custom Order</button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">View Portfolio</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER - SAME AS REFERENCE ========== -->
+    <footer class="pt-16 pb-8 bg-gray-900 dark:bg-[#0A0A0A]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                        <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <div class="flex gap-3 justify-center md:justify-start">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-stratum transition block">Custom Gallery</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Artist Roster</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Behind the Brush</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-stratum transition block">Custom Commissions</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Corporate Collabs</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Restoration</a></li>
+                        <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
+                    </ul>
+                </div>
+                
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
+                    <ul class="space-y-3 text-gray-400 text-sm">
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>88 Art District, Los Angeles, CA</span>
+                        </li>
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (424) 242-8800</span>
+                        </li>
+                        <li class="footer-contact-item justify-center md:justify-start">
+                            <i class="fas fa-envelope"></i>
+                            <span>studio@stratumcustom.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-xs font-mono">
+                <p>© 2026 Stratum Custom Art Studio — Every pair is a statement. #WearTheArt</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeBtn = document.getElementById('theme-toggle');
+            const themeBtnMob = document.getElementById('theme-toggle-mobile');
+            
+            const updateThemeUI = (isDark) => {
+                [themeBtn, themeBtnMob].forEach(b => {
+                    if(b) {
+                        const moon = b.querySelector('.fa-moon');
+                        const sun = b.querySelector('.fa-sun');
+                        if(moon && sun) {
+                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                            else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
+                        }
+                    }
+                });
+            };
+
+            const toggleTheme = () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateThemeUI(isDark);
+            };
+
+            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+            
+            if(localStorage.getItem('theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+                updateThemeUI(true);
+            }
+            
+            const rtlBtn = document.getElementById('rtl-toggle');
+            const rtlMob = document.getElementById('rtl-toggle-mobile');
+
+            const updateRtlUI = (isRtl) => {
+                const dir = isRtl ? 'rtl' : 'ltr';
+                document.documentElement.dir = dir;
+                [rtlBtn, rtlMob].forEach(b => b && b.classList.toggle('active', isRtl));
+            };
+
+            const toggleRtl = () => {
+                const isRtl = document.documentElement.dir !== 'rtl';
+                localStorage.setItem('dir', isRtl ? 'rtl' : 'ltr');
+                updateRtlUI(isRtl);
+            };
+
+            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+
+            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+            
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileToggle?.querySelector('i');
+            if(mobileToggle) {
+                mobileToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('open');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                });
+            }
+            
+            document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    content.classList.toggle('show');
+                    const chevron = btn.querySelector('.fa-chevron-down');
+                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                });
+            });
+
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                const btn = dropdown.querySelector('button');
+                btn.addEventListener('click', (e) => {
+                    if (window.innerWidth >= 1280) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        document.querySelectorAll('.dropdown').forEach(d => {
+                            if (d !== dropdown) d.classList.remove('open');
+                        });
+                        dropdown.classList.toggle('open');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
