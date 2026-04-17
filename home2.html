@@ -610,50 +610,61 @@
         </div>
     </section>
 
-    <!-- ========== NEW SECTION 3: FEATURED DROPS (alternating layout) ========== -->
-    <section class="py-24 bg-white dark:bg-canvas-charcoal">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div>
-                    <span class="text-stratum font-mono text-sm tracking-widest border-l-4 border-stratum pl-3">CURATED COLLECTION</span>
-                    <h2 class="text-4xl md:text-5xl font-display font-bold mt-2">Signature <span class="text-stratum">Drops</span></h2>
-                </div>
-                <a href="#" class="text-stratum font-medium hover:underline mt-3 md:mt-0 inline-flex items-center gap-1">View All <i class="fas fa-arrow-right text-sm"></i></a>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Drop 1 - featured large -->
-                <div class="feature-card group flex flex-col md:flex-row overflow-hidden">
-                    <div class="md:w-2/5 h-64 md:h-auto overflow-hidden">
-                        <img src="/assest/puma.jpg" alt="Royal Heritage" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 md:w-3/5 flex flex-col justify-center">
-                        <div class="text-stratum font-mono text-xs mb-2">LIMITED EDITION</div>
-                        <h3 class="text-2xl font-bold">"Royal Heritage"</h3>
-                        <p class="text-gray-500 text-sm mt-1">Air Force 1 • Hand-painted 24k gold leaf accents</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <span class="text-2xl font-bold text-stratum">$489</span>
-                            <button class="px-5 py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">Secure Pair</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Drop 2 -->
-                <div class="feature-card group flex flex-col md:flex-row overflow-hidden">
-                    <div class="md:w-2/5 h-64 md:h-auto overflow-hidden">
-                        <img src="/assest/neon.jpg" alt="Neon Samurai" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                    </div>
-                    <div class="p-6 md:w-3/5 flex flex-col justify-center">
-                        <div class="text-stratum font-mono text-xs mb-2">ARTIST SERIES</div>
-                        <h3 class="text-2xl font-bold">"Neon Samurai"</h3>
-                        <p class="text-gray-500 text-sm mt-1">Dunk Low • UV-reactive pigments</p>
-                        <div class="flex items-center justify-between mt-4">
-                            <span class="text-2xl font-bold text-stratum">$579</span>
-                            <button class="px-5 py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">Secure Pair</button>
-                        </div>
-                    </div>
-                </div>
+    <div class="flex flex-col gap-10 max-w-5xl mx-auto">
+
+    <!-- Drop 1 -->
+    <div class="feature-card group flex flex-col md:flex-row items-center gap-6 bg-white dark:bg-[#1A1A1A] rounded-2xl p-4 sm:p-5 shadow-sm">
+
+        <!-- Image -->
+        <div class="w-full md:w-1/2 h-56 sm:h-64 overflow-hidden rounded-xl">
+            <img src="/assest/puma.jpg"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Content -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="text-stratum text-xs mb-2">LIMITED EDITION</div>
+            <h3 class="text-xl sm:text-2xl font-bold">Royal Heritage</h3>
+            <p class="text-gray-500 text-sm mt-1">
+                Air Force 1 • Hand-painted 24k gold leaf accents
+            </p>
+
+            <div class="flex items-center justify-center md:justify-between mt-4 gap-4">
+                <span class="text-xl sm:text-2xl font-bold text-stratum">$489</span>
+                <button class="px-4 py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">
+                    Secure Pair
+                </button>
             </div>
         </div>
-    </section>
+    </div>
+
+    <!-- Drop 2 -->
+    <div class="feature-card group flex flex-col md:flex-row-reverse items-center gap-6 bg-white dark:bg-[#1A1A1A] rounded-2xl p-4 sm:p-5 shadow-sm">
+
+        <!-- Image -->
+        <div class="w-full md:w-1/2 h-56 sm:h-64 overflow-hidden rounded-xl">
+            <img src="/assest/neon.jpg"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Content -->
+        <div class="w-full md:w-1/2 text-center md:text-left">
+            <div class="text-stratum text-xs mb-2">ARTIST SERIES</div>
+            <h3 class="text-xl sm:text-2xl font-bold">Neon Samurai</h3>
+            <p class="text-gray-500 text-sm mt-1">
+                Dunk Low • UV-reactive pigments
+            </p>
+
+            <div class="flex items-center justify-center md:justify-between mt-4 gap-4">
+                <span class="text-xl sm:text-2xl font-bold text-stratum">$579</span>
+                <button class="px-4 py-2 border border-stratum rounded-full text-sm hover:bg-stratum hover:text-white transition">
+                    Secure Pair
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
 
     <!-- ========== NEW SECTION 4: ARTIST SPOTLIGHT (modern layout) ========== -->
     <section class="py-24 bg-gradient-to-r from-stratum/5 to-transparent dark:from-stratum/10">
@@ -700,7 +711,7 @@
                 </div>
                 <div class="text-center">
                     <div class="w-16 h-16 bg-stratum text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4 shadow-lg">2</div>
-                    <h4 class="font-bold text-xl">Sketch & Approve</h4>
+                    <h4 class="font-bold text-xl">Sketch </h4>
                     <p class="text-[15px] text-gray-500">Digital mockup & material selection</p>
                 </div>
                 <div class="text-center">
