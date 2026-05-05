@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limited Drops | Stratum Customs - Exclusive Sneaker Releases</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
-    <meta name="description" content="Shop exclusive limited edition custom sneakers. Hand-painted masterpieces available in very limited quantities. Don't miss out on our drops.">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
+    <meta name="description"
+        content="Shop exclusive limited edition custom sneakers. Hand-painted masterpieces available in very limited quantities. Don't miss out on our drops.">
+
     <!-- Tailwind CSS -->
     <script src="tailwind.js"></script>
     <script>
@@ -48,24 +51,27 @@
             }
         }
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Hide global scrollbar */
         body {
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* Navigation Styles */
         .nav-item {
             position: relative;
@@ -75,15 +81,16 @@
             transition: color 0.3s ease;
             padding: 0.5rem 0;
         }
-        
-        .nav-item:hover, .nav-item.active {
+
+        .nav-item:hover,
+        .nav-item.active {
             color: #853953;
         }
-        
+
         .nav-item.active {
             font-weight: 700;
         }
-        
+
         .nav-item::after {
             content: '';
             position: absolute;
@@ -94,16 +101,16 @@
             background: #853953;
             transition: width 0.3s ease;
         }
-        
+
         .nav-item:hover::after {
             width: 100%;
         }
-        
+
         /* Dropdown */
         .dropdown {
             position: relative;
         }
-        
+
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -118,21 +125,21 @@
             transition: all 0.3s ease;
             z-index: 1000;
             border: 1px solid #85395320;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         .dark .dropdown-menu {
             background: #1A1A1A;
             border-color: #85395340;
         }
-        
+
         .dropdown:hover .dropdown-menu,
         .dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .dropdown-item {
             display: flex;
             align-items: center;
@@ -141,26 +148,26 @@
             transition: all 0.2s;
             font-size: 0.85rem;
         }
-        
+
         .dropdown-item:hover {
             background: #85395310;
             color: #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item.active {
             background: #85395305;
             color: #853953;
             font-weight: 700;
-            border-left: 3px solid #853953;
+            border-inline-start: 3px solid #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item i {
             width: 18px;
             color: #853953;
         }
-        
+
         /* Auth Buttons */
         .auth-btn {
             padding: 0.5rem 1.5rem;
@@ -169,28 +176,28 @@
             font-size: 0.85rem;
             transition: all 0.3s;
         }
-        
+
         .auth-btn.login {
             background: transparent;
             border: 1.5px solid #853953;
             color: #853953;
         }
-        
+
         .auth-btn.login:hover {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup:hover {
             background: #5E2A3C;
             transform: translateY(-2px);
         }
-        
+
         /* Toggle Buttons */
         .toggle-btn {
             width: 36px;
@@ -204,18 +211,18 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .dark .toggle-btn {
             background: #2A2A2A;
             color: #FFFFFF;
         }
-        
+
         .toggle-btn:hover {
             background: #853953;
             color: white;
             transform: rotate(15deg);
         }
-        
+
         /* Drop Card Styles */
         .drop-card {
             background: #FFFFFF;
@@ -225,18 +232,18 @@
             border: 1px solid #E8E8E8;
             position: relative;
         }
-        
+
         .dark .drop-card {
             background: #121212;
             border-color: #2A2A2A;
         }
-        
+
         .drop-card:hover {
             transform: translateY(-10px);
             border-color: #853953;
             box-shadow: 0 30px 45px -15px #85395360;
         }
-        
+
         /* Stock Badge */
         .stock-badge {
             position: absolute;
@@ -249,17 +256,17 @@
             font-size: 0.7rem;
             font-weight: 700;
             z-index: 10;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
         .stock-badge.low {
             background: #DC2626;
         }
-        
+
         .stock-badge.sold {
             background: #6B7280;
         }
-        
+
         /* Progress Bar */
         .progress-bar {
             height: 6px;
@@ -267,18 +274,18 @@
             border-radius: 10px;
             overflow: hidden;
         }
-        
+
         .progress-fill {
             height: 100%;
             background: #853953;
             border-radius: 10px;
             transition: width 0.5s ease;
         }
-        
+
         .dark .progress-bar {
             background: #2A2A2A;
         }
-        
+
         .btn-primary {
             background: #853953;
             color: white;
@@ -290,12 +297,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .btn-primary:hover {
             background: #5E2A3C;
             transform: scale(1.03);
         }
-        
+
         .btn-outline {
             border: 2px solid #853953;
             background: transparent;
@@ -305,12 +312,12 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .btn-outline:hover {
             background: #853953;
             color: white;
         }
-        
+
         .btn-disabled {
             background: #9CA3AF;
             color: white;
@@ -319,7 +326,7 @@
             font-weight: 600;
             cursor: not-allowed;
         }
-        
+
         .shimmer-text {
             background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
             background-size: 200% auto;
@@ -328,12 +335,17 @@
             color: transparent;
             animation: shimmer 3s linear infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
         }
-        
+
         /* Social Icons */
         .social-icon {
             width: 40px;
@@ -346,13 +358,13 @@
             transition: all 0.3s;
             color: #853953;
         }
-        
+
         .social-icon:hover {
             background: #853953;
             color: white;
             transform: translateY(-3px);
         }
-        
+
         /* Mobile Menu */
         .mobile-menu {
             background: #FFFFFF;
@@ -360,16 +372,16 @@
             overflow: hidden;
             transition: max-height 0.5s ease;
         }
-        
+
         .dark .mobile-menu {
             background: #0F0F0F;
         }
-        
+
         .mobile-menu.open {
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .mobile-menu-item {
             display: block;
             padding: 1rem 1.5rem;
@@ -377,62 +389,63 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-        
-        .mobile-menu-item.active, .mobile-dropdown-content a.active {
+
+        .mobile-menu-item.active,
+        .mobile-dropdown-content a.active {
             border-left: 4px solid #853953;
             background: #85395308;
             color: #853953;
             font-weight: 700;
         }
-        
+
         .dark .mobile-menu-item {
             border-bottom-color: #2A2A2A;
         }
-        
+
         .mobile-dropdown-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s;
             background: #F8F8F8;
         }
-        
+
         .dark .mobile-dropdown-content {
             background: #1A1A1A;
         }
-        
+
         .mobile-dropdown-content.show {
             max-height: 180px;
         }
-        
+
         .footer-heading {
             position: relative;
             padding-bottom: 0.5rem;
             display: inline-block;
         }
-        
-        
-        
+
+
+
         @media (min-width: 768px) {
             .footer-heading {
                 display: block;
                 padding-bottom: 0;
-                border-left: 3px solid #853953;
-                padding-left: 0.75rem;
+                border-inline-start: 3px solid #853953;
+                padding-inline-start: 0.75rem;
             }
-            
+
         }
-        
+
         .footer-contact-item {
             display: flex;
             gap: 0.75rem;
             align-items: center;
         }
-        
+
         .footer-contact-item i {
             width: 20px;
             color: #853953;
         }
-        
+
         /* Filter Buttons */
         .filter-btn {
             padding: 0.5rem 1.2rem;
@@ -445,41 +458,47 @@
             border: 1px solid #E5E5E5;
             color: #4B5563;
         }
-        
+
         .dark .filter-btn {
             background: #1A1A1A;
             border-color: #2A2A2A;
             color: #9CA3AF;
         }
-        
+
         .filter-btn.active {
             background: #853953;
             border-color: #853953;
             color: white;
         }
-        
+
         .filter-btn:hover:not(.active) {
             border-color: #853953;
             color: #853953;
         }
     </style>
 </head>
+
 <body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
 
     <!-- ========== HEADER - SAME AS REFERENCE ========== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
         <div class="container mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
-                        <span class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
+                    <div
+                        class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
+                        <span
+                            class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span
+                            class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
                     </div>
                 </a>
 
                 <div class="hidden xl:flex items-center">
                     <div class="flex items-center gap-8">
                         <div class="dropdown">
-                            <button class="nav-item flex items-center gap-1">Home <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <button class="nav-item flex items-center gap-1">Home <i
+                                    class="fas fa-chevron-down text-[10px]"></i></button>
                             <div class="dropdown-menu">
                                 <a href="index.html" class="dropdown-item"> Home 1</a>
                                 <a href="home2.html" class="dropdown-item"> Home 2</a>
@@ -489,23 +508,28 @@
                         <a href="portfolio.html" class="nav-item">Portfolio</a>
                         <a href="order.html" class="nav-item">Custom Orders</a>
                         <div class="dropdown">
-                            <button class="nav-item active flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <button class="nav-item active flex items-center gap-1">Services <i
+                                    class="fas fa-chevron-down text-[10px]"></i></button>
                             <div class="dropdown-menu">
-                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
-                                <a href="drop.html" class="dropdown-item active"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
-                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i> Community</a>
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book
+                                    Session</a>
+                                <a href="drop.html" class="dropdown-item active"><i class="fas fa-ticket-alt"></i>
+                                    Limited Drops</a>
+                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i>
+                                    Community</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item">Contact</a>
                     </div>
-                    
+
                     <div class="flex items-center gap-4 ms-10">
                         <a href="login.html" class="auth-btn login">Login</a>
                         <a href="signup.html" class="auth-btn signup">Sign Up</a>
                     </div>
-                    
+
                     <div class="flex gap-3 ms-6">
-                        <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="theme-toggle" class="toggle-btn"><i class="fas fa-moon"></i><i
+                                class="fas fa-sun hidden"></i></button>
                         <button id="rtl-toggle" class="toggle-btn">⇄</button>
                     </div>
                 </div>
@@ -517,7 +541,8 @@
 
             <div id="mobile-menu" class="mobile-menu xl:hidden">
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn flex justify-between items-center w-full mobile-menu-item">Home <i class="fas fa-chevron-down text-xs"></i></button>
+                    <button class="mobile-dropdown-btn flex justify-between items-center w-full mobile-menu-item">Home
+                        <i class="fas fa-chevron-down text-xs"></i></button>
                     <div class="mobile-dropdown-content">
                         <a href="index.html" class="block px-8 py-2 text-sm">Home 1</a>
                         <a href="home2.html" class="block px-8 py-2 text-sm">Home 2</a>
@@ -527,7 +552,8 @@
                 <a href="portfolio.html" class="mobile-menu-item">Portfolio</a>
                 <a href="order.html" class="mobile-menu-item">Custom Orders</a>
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i class="fas fa-chevron-down"></i></button>
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i
+                            class="fas fa-chevron-down"></i></button>
                     <div class="mobile-dropdown-content show">
                         <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
                         <a href="drop.html" class="block px-8 py-2 text-sm active">Limited Drops</a>
@@ -536,11 +562,14 @@
                 </div>
                 <a href="contact.html" class="mobile-menu-item">Contact</a>
                 <div class="flex flex-col gap-3 p-6">
-                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
-                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                    <a href="login.html"
+                        class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign
+                        Up</a>
                 </div>
                 <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
-                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i
+                            class="fas fa-sun hidden"></i></button>
                     <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
                 </div>
             </div>
@@ -588,7 +617,8 @@
                 <div class="drop-card" data-status="low">
                     <div class="stock-badge low">⚠️ Only 3 left!</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-stratum to-stratum-dark">
-                        <img src="/assest/han.jpg" alt="Royal Heritage" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/han.jpg" alt="Royal Heritage"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -607,7 +637,9 @@
                                 <div class="progress-fill" style="width: 6%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Secure Your Pair</button>
+                        <button
+                            class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Secure
+                            Your Pair</button>
                     </div>
                 </div>
 
@@ -615,7 +647,8 @@
                 <div class="drop-card" data-status="available">
                     <div class="stock-badge">🔥 Hot Drop</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-amber-700 to-stratum-dark">
-                        <img src="/assest/neon1.jpg" alt="Neon Samurai" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/neon1.jpg" alt="Neon Samurai"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -634,7 +667,9 @@
                                 <div class="progress-fill" style="width: 65%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Buy Now</button>
+                        <button
+                            class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Buy
+                            Now</button>
                     </div>
                 </div>
 
@@ -642,7 +677,8 @@
                 <div class="drop-card" data-status="sold">
                     <div class="stock-badge sold">SOLD OUT</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-purple-800 to-stratum opacity-70">
-                        <img src="/assest/gold.jpg" alt="Velvet Noir" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/gold.jpg" alt="Velvet Noir"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -661,7 +697,9 @@
                                 <div class="progress-fill" style="width: 100%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-gray-300 dark:bg-gray-700 text-gray-500 rounded-full font-semibold cursor-not-allowed" disabled>Notify Me</button>
+                        <button
+                            class="w-full py-3 bg-gray-300 dark:bg-gray-700 text-gray-500 rounded-full font-semibold cursor-not-allowed"
+                            disabled>Notify Me</button>
                     </div>
                 </div>
 
@@ -669,7 +707,8 @@
                 <div class="drop-card" data-status="available">
                     <div class="stock-badge">✨ New Drop</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-emerald-800 to-stratum-dark">
-                        <img src="/assest/green.jpg" alt="Emerald Luxe" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/green.jpg" alt="Emerald Luxe"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -688,7 +727,9 @@
                                 <div class="progress-fill" style="width: 40%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Buy Now</button>
+                        <button
+                            class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Buy
+                            Now</button>
                     </div>
                 </div>
 
@@ -696,7 +737,8 @@
                 <div class="drop-card" data-status="low">
                     <div class="stock-badge low">🔥 Only 2 left!</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-cyan-800 to-stratum">
-                        <img src="/assest/air.jpg" alt="Cyber Punk" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/air.jpg" alt="Cyber Punk"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -715,7 +757,9 @@
                                 <div class="progress-fill" style="width: 5%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Secure Your Pair</button>
+                        <button
+                            class="w-full py-3 bg-stratum text-white rounded-full font-semibold hover:bg-stratum-dark transition">Secure
+                            Your Pair</button>
                     </div>
                 </div>
 
@@ -723,7 +767,8 @@
                 <div class="drop-card" data-status="sold">
                     <div class="stock-badge sold">SOLD OUT</div>
                     <div class="h-72 overflow-hidden relative bg-gradient-to-br from-pink-700 to-stratum opacity-70">
-                        <img src="/assest/han1.jpg" alt="Sakura Blossom" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <img src="/assest/han1.jpg" alt="Sakura Blossom"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
@@ -742,7 +787,9 @@
                                 <div class="progress-fill" style="width: 100%"></div>
                             </div>
                         </div>
-                        <button class="w-full py-3 bg-gray-300 dark:bg-gray-700 text-gray-500 rounded-full font-semibold cursor-not-allowed" disabled>Join Waitlist</button>
+                        <button
+                            class="w-full py-3 bg-gray-300 dark:bg-gray-700 text-gray-500 rounded-full font-semibold cursor-not-allowed"
+                            disabled>Join Waitlist</button>
                     </div>
                 </div>
             </div>
@@ -755,8 +802,11 @@
             <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">Don't Miss the Next Drop</h2>
             <p class="text-white max-w-md mx-auto mb-8">Subscribe to get early access to exclusive releases.</p>
             <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" placeholder="Your email address" class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Notify Me</button>
+                <input type="email" placeholder="Your email address"
+                    class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button
+                    class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Notify
+                    Me</button>
             </div>
         </div>
     </section>
@@ -765,13 +815,15 @@
     <footer class="pt-16 pb-8 bg-gray-900 dark:bg-[#0A0A0A]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-start">
                     <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
-                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span
+                                class="text-2xl font-display font-bold text-white">Sneaks</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Where streetwear meets fine art. Custom
+                        hand-painted sneakers since 2019.</p>
                     <div class="flex gap-3 justify-center md:justify-start">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -779,8 +831,8 @@
                         <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Gallery</a></li>
@@ -789,8 +841,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
                     <ul class="space-y-2 text-gray-400 text-sm">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Commissions</a></li>
@@ -799,8 +851,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
                     <ul class="space-y-3 text-gray-400 text-sm">
                         <li class="footer-contact-item justify-center md:justify-start">
@@ -813,7 +865,7 @@
                         </li>
                         <li class="footer-contact-item justify-center md:justify-start">
                             <i class="fas fa-envelope"></i>
-                            <span>studio@stratumcustom.com</span>
+                            <span>PrimeSneaks@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -829,14 +881,14 @@
             // Theme Toggle
             const themeBtn = document.getElementById('theme-toggle');
             const themeBtnMob = document.getElementById('theme-toggle-mobile');
-            
+
             const updateThemeUI = (isDark) => {
                 [themeBtn, themeBtnMob].forEach(b => {
-                    if(b) {
+                    if (b) {
                         const moon = b.querySelector('.fa-moon');
                         const sun = b.querySelector('.fa-sun');
-                        if(moon && sun) {
-                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                        if (moon && sun) {
+                            if (isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
                             else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
                         }
                     }
@@ -850,14 +902,14 @@
                 updateThemeUI(isDark);
             };
 
-            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
-            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
-            
-            if(localStorage.getItem('theme') === 'dark') {
+            if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if (themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+
+            if (localStorage.getItem('theme') === 'dark') {
                 document.documentElement.classList.add('dark');
                 updateThemeUI(true);
             }
-            
+
             // RTL Toggle
             const rtlBtn = document.getElementById('rtl-toggle');
             const rtlMob = document.getElementById('rtl-toggle-mobile');
@@ -874,16 +926,16 @@
                 updateRtlUI(isRtl);
             };
 
-            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
-            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+            if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if (rtlMob) rtlMob.addEventListener('click', toggleRtl);
 
-            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
-            
+            if (localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+
             // Mobile Menu
             const mobileToggle = document.getElementById('mobile-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const icon = mobileToggle?.querySelector('i');
-            if(mobileToggle) {
+            if (mobileToggle) {
                 mobileToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('open');
                     icon.classList.toggle('fa-bars');
@@ -891,13 +943,13 @@
                     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
                 });
             }
-            
+
             document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const content = btn.nextElementSibling;
                     content.classList.toggle('show');
                     const chevron = btn.querySelector('.fa-chevron-down');
-                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                    if (chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
                 });
             });
 
@@ -930,9 +982,9 @@
                 btn.addEventListener('click', () => {
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    
+
                     const filter = btn.dataset.filter;
-                    
+
                     dropCards.forEach(card => {
                         if (filter === 'all' || card.dataset.status === filter) {
                             card.style.display = 'block';
@@ -945,4 +997,5 @@
         });
     </script>
 </body>
+
 </html>

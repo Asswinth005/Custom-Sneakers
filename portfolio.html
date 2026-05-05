@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stratum Customs | Portfolio — Bespoke Sneaker Art Gallery</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
-    <meta name="description" content="Explore our hand-painted custom sneaker gallery. From abstract expressionism to pop surrealism, discover wearable masterpieces by Stratum artists.">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
+    <meta name="description"
+        content="Explore our hand-painted custom sneaker gallery. From abstract expressionism to pop surrealism, discover wearable masterpieces by Stratum artists.">
+
     <!-- Tailwind CSS -->
     <script src="tailwind.js"></script>
     <script>
@@ -52,24 +55,27 @@
             }
         }
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Hide global scrollbar */
         body {
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* Navigation Styles */
         .nav-item {
             position: relative;
@@ -79,15 +85,16 @@
             transition: color 0.3s ease;
             padding: 0.5rem 0;
         }
-        
-        .nav-item:hover, .nav-item.active {
+
+        .nav-item:hover,
+        .nav-item.active {
             color: #853953;
         }
-        
+
         .nav-item.active {
             font-weight: 700;
         }
-        
+
         .nav-item::after {
             content: '';
             position: absolute;
@@ -98,16 +105,16 @@
             background: #853953;
             transition: width 0.3s ease;
         }
-        
+
         .nav-item:hover::after {
             width: 100%;
         }
-        
+
         /* Dropdown */
         .dropdown {
             position: relative;
         }
-        
+
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -122,21 +129,21 @@
             transition: all 0.3s ease;
             z-index: 1000;
             border: 1px solid #85395320;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         .dark .dropdown-menu {
             background: #1A1A1A;
             border-color: #85395340;
         }
-        
+
         .dropdown:hover .dropdown-menu,
         .dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .dropdown-item {
             display: flex;
             align-items: center;
@@ -145,26 +152,26 @@
             transition: all 0.2s;
             font-size: 0.85rem;
         }
-        
+
         .dropdown-item:hover {
             background: #85395310;
             color: #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item.active {
             background: #85395305;
             color: #853953;
             font-weight: 700;
-            border-left: 3px solid #853953;
+            border-inline-start: 3px solid #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item i {
             width: 18px;
             color: #853953;
         }
-        
+
         /* Auth Buttons */
         .auth-btn {
             padding: 0.5rem 1.5rem;
@@ -173,28 +180,28 @@
             font-size: 0.85rem;
             transition: all 0.3s;
         }
-        
+
         .auth-btn.login {
             background: transparent;
             border: 1.5px solid #853953;
             color: #853953;
         }
-        
+
         .auth-btn.login:hover {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup:hover {
             background: #5E2A3C;
             transform: translateY(-2px);
         }
-        
+
         /* Toggle Buttons */
         .toggle-btn {
             width: 36px;
@@ -208,18 +215,18 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .dark .toggle-btn {
             background: #2A2A2A;
             color: #FFFFFF;
         }
-        
+
         .toggle-btn:hover {
             background: #853953;
             color: white;
             transform: rotate(15deg);
         }
-        
+
         .btn-primary {
             background: #853953;
             color: white;
@@ -231,12 +238,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .btn-primary:hover {
             background: #5E2A3C;
             transform: scale(1.03);
         }
-        
+
         .btn-outline {
             border: 2px solid #853953;
             background: transparent;
@@ -246,12 +253,12 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .btn-outline:hover {
             background: #853953;
             color: white;
         }
-        
+
         .shimmer-text {
             background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
             background-size: 200% auto;
@@ -260,12 +267,17 @@
             color: transparent;
             animation: shimmer 3s linear infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
         }
-        
+
         .social-icon {
             width: 40px;
             height: 40px;
@@ -277,13 +289,13 @@
             transition: all 0.3s;
             color: #853953;
         }
-        
+
         .social-icon:hover {
             background: #853953;
             color: white;
             transform: translateY(-3px);
         }
-        
+
         /* Mobile Menu */
         .mobile-menu {
             background: #FFFFFF;
@@ -291,71 +303,71 @@
             overflow: hidden;
             transition: max-height 0.5s ease;
         }
-        
+
         .dark .mobile-menu {
             background: #0F0F0F;
         }
-        
+
         .mobile-menu.open {
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .mobile-menu-item {
             display: block;
             padding: 1rem 1.5rem;
             border-bottom: 1px solid #E8E8E8;
             font-weight: 500;
         }
-        
+
         .dark .mobile-menu-item {
             border-bottom-color: #2A2A2A;
         }
-        
+
         .mobile-dropdown-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s;
             background: #F8F8F8;
         }
-        
+
         .dark .mobile-dropdown-content {
             background: #1A1A1A;
         }
-        
+
         .mobile-dropdown-content.show {
             max-height: 180px;
         }
-        
+
         .footer-heading {
             position: relative;
             padding-bottom: 0.5rem;
             display: inline-block;
         }
-        
-        
-        
+
+
+
         @media (min-width: 768px) {
             .footer-heading {
                 display: block;
                 padding-bottom: 0;
-                border-left: 3px solid #853953;
-                padding-left: 0.75rem;
+                border-inline-start: 3px solid #853953;
+                padding-inline-start: 0.75rem;
             }
-            
+
         }
-        
+
         .footer-contact-item {
             display: flex;
             gap: 0.75rem;
             align-items: center;
         }
-        
+
         .footer-contact-item i {
             width: 20px;
             color: #853953;
         }
-        
+
         /* Portfolio Grid Styles */
         .portfolio-item {
             position: relative;
@@ -363,15 +375,15 @@
             border-radius: 28px;
             transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        
+
         .portfolio-item img {
             transition: transform 0.7s ease;
         }
-        
+
         .portfolio-item:hover img {
             transform: scale(1.05);
         }
-        
+
         .portfolio-overlay {
             position: absolute;
             inset: 0;
@@ -383,37 +395,42 @@
             opacity: 0;
             transition: opacity 0.4s ease;
         }
-        
+
         .portfolio-item:hover .portfolio-overlay {
             opacity: 1;
         }
-        
+
         .filter-btn {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        
+
         .filter-btn.active {
             background: #853953;
             color: white;
             border-color: #853953;
         }
-        
+
         .filter-btn:hover:not(.active) {
             background: #85395310;
             border-color: #853953;
         }
     </style>
 </head>
+
 <body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
 
     <!-- ========== HEADER - IDENTICAL TO REFERENCE ========== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
         <div class="container mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
-                        <span class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
+                    <div
+                        class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
+                        <span
+                            class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span
+                            class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
                     </div>
                 </a>
 
@@ -433,23 +450,28 @@
                         <a href="portfolio.html" class="nav-item active">Portfolio</a>
                         <a href="order.html" class="nav-item">Custom Orders</a>
                         <div class="dropdown">
-                            <button class="nav-item flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <button class="nav-item flex items-center gap-1">Services <i
+                                    class="fas fa-chevron-down text-[10px]"></i></button>
                             <div class="dropdown-menu">
-                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
-                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
-                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i> Community</a>
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book
+                                    Session</a>
+                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited
+                                    Drops</a>
+                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i>
+                                    Community</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item">Contact</a>
                     </div>
-                    
+
                     <div class="flex items-center gap-4 ms-10">
                         <a href="login.html" class="auth-btn login">Login</a>
                         <a href="signup.html" class="auth-btn signup">Sign Up</a>
                     </div>
-                    
+
                     <div class="flex gap-3 ms-6">
-                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i
+                                class="fas fa-sun hidden"></i></button>
                         <button id="rtl-toggle" class="toggle-btn" title="RTL">⇄</button>
                     </div>
                 </div>
@@ -474,7 +496,8 @@
                 <a href="portfolio.html" class="mobile-menu-item active">Portfolio</a>
                 <a href="order.html" class="mobile-menu-item">Custom Orders</a>
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i class="fas fa-chevron-down"></i></button>
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i
+                            class="fas fa-chevron-down"></i></button>
                     <div class="mobile-dropdown-content">
                         <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
                         <a href="drop.html" class="block px-8 py-2 text-sm">Limited Drops</a>
@@ -483,11 +506,14 @@
                 </div>
                 <a href="contact.html" class="mobile-menu-item">Contact</a>
                 <div class="flex flex-col gap-3 p-6">
-                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
-                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                    <a href="login.html"
+                        class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign
+                        Up</a>
                 </div>
                 <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
-                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i
+                            class="fas fa-sun hidden"></i></button>
                     <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
                 </div>
             </div>
@@ -509,7 +535,8 @@
                 </h1>
                 <div class="w-24 h-1 bg-stratum mx-auto my-6"></div>
                 <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light">
-                    Explore our collection of hand-painted masterpieces — each pair is a unique expression of creativity and craftsmanship.
+                    Explore our collection of hand-painted masterpieces — each pair is a unique expression of creativity
+                    and craftsmanship.
                 </p>
             </div>
         </div>
@@ -519,12 +546,21 @@
     <section class="py-8 bg-white dark:bg-canvas-charcoal  top-20 z-20 shadow-sm">
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-3">
-                <button data-filter="all" class="filter-btn active px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">All Works</button>
-                <button data-filter="air-force" class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Air Force 1</button>
-                <button data-filter="dunk" class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Dunk Low</button>
-                <button data-filter="jordan" class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Jordan</button>
-                <button data-filter="yeezy" class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Yeezy</button>
-                <button data-filter="collab" class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Collaborations</button>
+                <button data-filter="all"
+                    class="filter-btn active px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">All
+                    Works</button>
+                <button data-filter="air-force"
+                    class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Air
+                    Force 1</button>
+                <button data-filter="dunk"
+                    class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Dunk
+                    Low</button>
+                <button data-filter="jordan"
+                    class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Jordan</button>
+                <button data-filter="yeezy"
+                    class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Yeezy</button>
+                <button data-filter="collab"
+                    class="filter-btn px-6 py-2 rounded-full border border-stratum/30 text-sm font-medium transition">Collaborations</button>
             </div>
         </div>
     </section>
@@ -642,7 +678,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Load More Button -->
             <div class="text-center mt-12">
                 <button class="btn-outline" id="loadMoreBtn">Load More <i class="fas fa-arrow-down ml-2"></i></button>
@@ -650,95 +686,113 @@
         </div>
     </section>
 
-   <!-- ========== ARTIST SPOTLIGHT: MEET THE MAKER ========== -->
-<section class="py-24 bg-white dark:bg-canvas-charcoal">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-14">
-            <span class="text-stratum font-mono text-sm tracking-widest inline-block pb-1">MEET THE ARTIST</span>
-            <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">In the <span class="text-stratum">Studio</span> with Elena</h2>
-        </div>
-        <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
-                <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-gem text-2xl text-stratum"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2">From Blank to Bold</h3>
-                <p class="text-gray-500 text-sm">"Every pair starts with a story. I sketch directly onto the leather, letting the silhouette guide my brush."</p>
+    <!-- ========== ARTIST SPOTLIGHT: MEET THE MAKER ========== -->
+    <section class="py-24 bg-white dark:bg-canvas-charcoal">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-14">
+                <span class="text-stratum font-mono text-sm tracking-widest inline-block pb-1">MEET THE ARTIST</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">In the <span
+                        class="text-stratum">Studio</span> with Elena</h2>
             </div>
-            <!-- Card 2 -->
-            <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
-                <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-layer-group text-2xl text-stratum"></i>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gem text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">From Blank to Bold</h3>
+                    <p class="text-gray-500 text-sm">"Every pair starts with a story. I sketch directly onto the
+                        leather, letting the silhouette guide my brush."</p>
                 </div>
-                <h3 class="text-lg font-bold mb-2">The Layering Ritual</h3>
-                <p class="text-gray-500 text-sm">"Up to 12 thin layers of Angelus paint, each cured with a heat gun. Patience creates permanence."</p>
+                <!-- Card 2 -->
+                <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-layer-group text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">The Layering Ritual</h3>
+                    <p class="text-gray-500 text-sm">"Up to 12 thin layers of Angelus paint, each cured with a heat gun.
+                        Patience creates permanence."</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
+                    <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-certificate text-2xl text-stratum"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Final Seal & Signature</h3>
+                    <p class="text-gray-500 text-sm">"UV finisher, then signed + numbered. Each pair leaves with a
+                        certificate of authenticity."</p>
+                </div>
             </div>
-            <!-- Card 3 -->
-            <div class="bg-canvas-light dark:bg-canvas-dark rounded-2xl p-6 text-center border border-stratum/10">
-                <div class="w-20 h-20 bg-stratum/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-certificate text-2xl text-stratum"></i>
-                </div>
-                <h3 class="text-lg font-bold mb-2">Final Seal & Signature</h3>
-                <p class="text-gray-500 text-sm">"UV finisher, then signed + numbered. Each pair leaves with a certificate of authenticity."</p>
+            <div class="text-center mt-10">
+                <button class="btn-outline text-sm"><i class="fas fa-play-circle mr-2"></i> Watch Elena's
+                    Process</button>
             </div>
         </div>
-        <div class="text-center mt-10">
-            <button class="btn-outline text-sm"><i class="fas fa-play-circle mr-2"></i> Watch Elena's Process</button>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ========== CLIENT SHOWCASE / PRESS MENTIONS ========== -->
-<section class="py-20 bg-canvas-light dark:bg-canvas-dark">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-12">
-            <span class="text-stratum font-mono text-sm tracking-widest border-l-4 border-stratum pl-3">AS FEATURED IN</span>
-            <h2 class="text-3xl md:text-4xl font-display font-bold mt-3">Trusted by <span class="text-stratum">Collectors</span> Worldwide</h2>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-            <div class="text-center opacity-70 hover:opacity-100 transition group">
-                <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
-<i class="fas fa-envelope text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum transition-colors"></i>                </div>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">HIGHSNOBIETY</p>
+    <!-- ========== CLIENT SHOWCASE / PRESS MENTIONS ========== -->
+    <section class="py-20 bg-canvas-light dark:bg-canvas-dark">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-stratum font-mono text-sm tracking-widest border-l-4 border-stratum pl-3">AS FEATURED
+                    IN</span>
+                <h2 class="text-3xl md:text-4xl font-display font-bold mt-3">Trusted by <span
+                        class="text-stratum">Collectors</span> Worldwide</h2>
             </div>
-            <div class="text-center opacity-70 hover:opacity-100 transition group">
-                <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
-                    <i class="fab fa-brands fa-squarespace text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="text-center opacity-70 hover:opacity-100 transition group">
+                    <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+                        <i
+                            class="fas fa-envelope text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">HIGHSNOBIETY</p>
                 </div>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">COMPLEX</p>
-            </div>
-            <div class="text-center opacity-70 hover:opacity-100 transition group">
-                <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
-                    <i class="fas fa-newspaper text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+                <div class="text-center opacity-70 hover:opacity-100 transition group">
+                    <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+                        <i
+                            class="fab fa-brands fa-squarespace text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">COMPLEX</p>
                 </div>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">HYPEBEAST</p>
-            </div>
-            <div class="text-center opacity-70 hover:opacity-100 transition group">
-                <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
-                    <i class="fas fa-tv text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+                <div class="text-center opacity-70 hover:opacity-100 transition group">
+                    <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+                        <i
+                            class="fas fa-newspaper text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">HYPEBEAST</p>
                 </div>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">FORBES</p>
+                <div class="text-center opacity-70 hover:opacity-100 transition group">
+                    <div class="w-16 h-16 mx-auto mb-2 flex items-center justify-center">
+                        <i
+                            class="fas fa-tv text-4xl text-gray-500 dark:text-gray-400 group-hover:text-stratum dark:group-hover:text-stratum transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-2 font-mono tracking-wider">FORBES</p>
+                </div>
+            </div>
+            <div class="max-w-2xl mx-auto text-center">
+                <div class="flex items-center justify-center gap-2 text-stratum mb-3">
+                    <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i
+                        class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i
+                        class="fas fa-star text-xs"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 italic">"Stratum Customs doesn't just paint sneakers — they
+                    create conversation pieces that blur the line between fashion and fine art."</p>
+                <p class="text-sm text-stratum mt-3 font-mono">— Sneaker Freaker Magazine</p>
             </div>
         </div>
-        <div class="max-w-2xl mx-auto text-center">
-            <div class="flex items-center justify-center gap-2 text-stratum mb-3">
-                <i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i><i class="fas fa-star text-xs"></i>
-            </div>
-            <p class="text-gray-600 dark:text-gray-300 italic">"Stratum Customs doesn't just paint sneakers — they create conversation pieces that blur the line between fashion and fine art."</p>
-            <p class="text-sm text-stratum mt-3 font-mono">— Sneaker Freaker Magazine</p>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- ========== CTA NEWSLETTER ========== -->
     <section class="py-20 bg-stratum">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-3">Never Miss a Drop</h2>
-            <p class="text-stratum-soft max-w-md mx-auto mb-6">Get exclusive access to new collections, artist collabs, and studio news.</p>
+            <p class="text-stratum-soft max-w-md mx-auto mb-6">Get exclusive access to new collections, artist collabs,
+                and studio news.</p>
             <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" placeholder="Your email address" class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Subscribe</button>
+                <input type="email" placeholder="Your email address"
+                    class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button
+                    class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Subscribe</button>
             </div>
         </div>
     </section>
@@ -747,13 +801,15 @@
     <footer class="pt-16 pb-8 bg-gray-900 dark:bg-[#0A0A0A]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-start">
                     <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
-                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span
+                                class="text-2xl font-display font-bold text-white">Sneaks</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom
+                        hand-painted sneakers since 2019.</p>
                     <div class="flex gap-3 justify-center md:justify-start">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -761,8 +817,8 @@
                         <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Gallery</a></li>
@@ -771,8 +827,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Commissions</a></li>
@@ -781,8 +837,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
                     <ul class="space-y-3 text-gray-400 text-[16px]">
                         <li class="footer-contact-item justify-center md:justify-start">
@@ -795,7 +851,7 @@
                         </li>
                         <li class="footer-contact-item justify-center md:justify-start">
                             <i class="fas fa-envelope"></i>
-                            <span>studio@stratumcustom.com</span>
+                            <span>PrimeSneaks@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -811,14 +867,14 @@
             // Theme Toggle
             const themeBtn = document.getElementById('theme-toggle');
             const themeBtnMob = document.getElementById('theme-toggle-mobile');
-            
+
             const updateThemeUI = (isDark) => {
                 [themeBtn, themeBtnMob].forEach(b => {
-                    if(b) {
+                    if (b) {
                         const moon = b.querySelector('.fa-moon');
                         const sun = b.querySelector('.fa-sun');
-                        if(moon && sun) {
-                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                        if (moon && sun) {
+                            if (isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
                             else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
                         }
                     }
@@ -832,14 +888,14 @@
                 updateThemeUI(isDark);
             };
 
-            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
-            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
-            
-            if(localStorage.getItem('theme') === 'dark') {
+            if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if (themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+
+            if (localStorage.getItem('theme') === 'dark') {
                 document.documentElement.classList.add('dark');
                 updateThemeUI(true);
             }
-            
+
             // RTL Toggle
             const rtlBtn = document.getElementById('rtl-toggle');
             const rtlMob = document.getElementById('rtl-toggle-mobile');
@@ -856,16 +912,16 @@
                 updateRtlUI(isRtl);
             };
 
-            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
-            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+            if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if (rtlMob) rtlMob.addEventListener('click', toggleRtl);
 
-            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
-            
+            if (localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+
             // Mobile Menu
             const mobileToggle = document.getElementById('mobile-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const icon = mobileToggle?.querySelector('i');
-            if(mobileToggle) {
+            if (mobileToggle) {
                 mobileToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('open');
                     icon.classList.toggle('fa-bars');
@@ -873,20 +929,20 @@
                     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
                 });
             }
-            
+
             document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const content = btn.nextElementSibling;
                     content.classList.toggle('show');
                     const chevron = btn.querySelector('.fa-chevron-down');
-                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                    if (chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
                 });
             });
 
             // Touch-friendly Dropdowns
             document.querySelectorAll('.dropdown').forEach(dropdown => {
                 const btn = dropdown.querySelector('button');
-                if(btn) {
+                if (btn) {
                     btn.addEventListener('click', (e) => {
                         if (window.innerWidth >= 1280) {
                             e.preventDefault();
@@ -909,15 +965,15 @@
             // Portfolio Filter Functionality
             const filterBtns = document.querySelectorAll('.filter-btn');
             const portfolioItems = document.querySelectorAll('.portfolio-item');
-            
+
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     // Update active state
                     filterBtns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
-                    
+
                     const filterValue = btn.getAttribute('data-filter');
-                    
+
                     portfolioItems.forEach(item => {
                         if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                             item.style.display = 'block';
@@ -928,12 +984,12 @@
                     });
                 });
             });
-            
+
             // Load More functionality
             let visibleCount = 6;
             const items = Array.from(portfolioItems);
             const loadMoreBtn = document.getElementById('loadMoreBtn');
-            
+
             function updateVisibility() {
                 items.forEach((item, index) => {
                     if (index < visibleCount) {
@@ -942,23 +998,24 @@
                         item.style.display = 'none';
                     }
                 });
-                
+
                 if (visibleCount >= items.length) {
                     loadMoreBtn.style.display = 'none';
                 } else {
                     loadMoreBtn.style.display = 'inline-flex';
                 }
             }
-            
-            if(loadMoreBtn) {
+
+            if (loadMoreBtn) {
                 loadMoreBtn.addEventListener('click', () => {
                     visibleCount += 3;
                     updateVisibility();
                 });
             }
-            
+
             updateVisibility();
         });
     </script>
 </body>
+
 </html>

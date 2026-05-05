@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stratum Customs | Contact — Bespoke Sneaker Art Studio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
-    <meta name="description" content="Get in touch with Stratum Customs. Book consultations, inquire about custom commissions, or visit our LA studio. We'd love to hear from you.">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
+    <meta name="description"
+        content="Get in touch with Stratum Customs. Book consultations, inquire about custom commissions, or visit our LA studio. We'd love to hear from you.">
+
     <!-- Tailwind CSS -->
     <script src="tailwind.js"></script>
     <script>
@@ -52,20 +55,23 @@
             }
         }
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* Navigation Styles */
         .nav-item {
             position: relative;
@@ -75,15 +81,16 @@
             transition: color 0.3s ease;
             padding: 0.5rem 0;
         }
-        
-        .nav-item:hover, .nav-item.active {
+
+        .nav-item:hover,
+        .nav-item.active {
             color: #853953;
         }
-        
+
         .nav-item.active {
             font-weight: 700;
         }
-        
+
         .nav-item::after {
             content: '';
             position: absolute;
@@ -94,16 +101,16 @@
             background: #853953;
             transition: width 0.3s ease;
         }
-        
+
         .nav-item:hover::after {
             width: 100%;
         }
-        
+
         /* Dropdown */
         .dropdown {
             position: relative;
         }
-        
+
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -118,21 +125,21 @@
             transition: all 0.3s ease;
             z-index: 1000;
             border: 1px solid #85395320;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         .dark .dropdown-menu {
             background: #1A1A1A;
             border-color: #85395340;
         }
-        
+
         .dropdown:hover .dropdown-menu,
         .dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .dropdown-item {
             display: flex;
             align-items: center;
@@ -141,26 +148,26 @@
             transition: all 0.2s;
             font-size: 0.85rem;
         }
-        
+
         .dropdown-item:hover {
             background: #85395310;
             color: #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item.active {
             background: #85395305;
             color: #853953;
             font-weight: 700;
-            border-left: 3px solid #853953;
+            border-inline-start: 3px solid #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item i {
             width: 18px;
             color: #853953;
         }
-        
+
         /* Auth Buttons */
         .auth-btn {
             padding: 0.5rem 1.5rem;
@@ -169,28 +176,28 @@
             font-size: 0.85rem;
             transition: all 0.3s;
         }
-        
+
         .auth-btn.login {
             background: transparent;
             border: 1.5px solid #853953;
             color: #853953;
         }
-        
+
         .auth-btn.login:hover {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup:hover {
             background: #5E2A3C;
             transform: translateY(-2px);
         }
-        
+
         /* Toggle Buttons */
         .toggle-btn {
             width: 36px;
@@ -204,18 +211,18 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .dark .toggle-btn {
             background: #2A2A2A;
             color: #FFFFFF;
         }
-        
+
         .toggle-btn:hover {
             background: #853953;
             color: white;
             transform: rotate(15deg);
         }
-        
+
         .btn-primary {
             background: #853953;
             color: white;
@@ -227,12 +234,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .btn-primary:hover {
             background: #5E2A3C;
             transform: scale(1.03);
         }
-        
+
         .btn-outline {
             border: 2px solid #853953;
             background: transparent;
@@ -242,12 +249,12 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .btn-outline:hover {
             background: #853953;
             color: white;
         }
-        
+
         .shimmer-text {
             background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
             background-size: 200% auto;
@@ -256,12 +263,17 @@
             color: transparent;
             animation: shimmer 3s linear infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
         }
-        
+
         .social-icon {
             width: 40px;
             height: 40px;
@@ -273,13 +285,13 @@
             transition: all 0.3s;
             color: #853953;
         }
-        
+
         .social-icon:hover {
             background: #853953;
             color: white;
             transform: translateY(-3px);
         }
-        
+
         /* Mobile Menu */
         .mobile-menu {
             background: #FFFFFF;
@@ -287,16 +299,16 @@
             overflow: hidden;
             transition: max-height 0.5s ease;
         }
-        
+
         .dark .mobile-menu {
             background: #0F0F0F;
         }
-        
+
         .mobile-menu.open {
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .mobile-menu-item {
             display: block;
             padding: 1rem 1.5rem;
@@ -304,62 +316,63 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-        
-        .mobile-menu-item.active, .mobile-dropdown-content a.active {
+
+        .mobile-menu-item.active,
+        .mobile-dropdown-content a.active {
             border-left: 4px solid #853953;
             background: #85395308;
             color: #853953;
             font-weight: 700;
         }
-        
+
         .dark .mobile-menu-item {
             border-bottom-color: #2A2A2A;
         }
-        
+
         .mobile-dropdown-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s;
             background: #F8F8F8;
         }
-        
+
         .dark .mobile-dropdown-content {
             background: #1A1A1A;
         }
-        
+
         .mobile-dropdown-content.show {
             max-height: 180px;
         }
-        
+
         .footer-heading {
             position: relative;
             padding-bottom: 0.5rem;
             display: inline-block;
         }
-        
-        
-        
+
+
+
         @media (min-width: 768px) {
             .footer-heading {
                 display: block;
                 padding-bottom: 0;
-                border-left: 3px solid #853953;
-                padding-left: 0.75rem;
+                border-inline-start: 3px solid #853953;
+                padding-inline-start: 0.75rem;
             }
-            
+
         }
-        
+
         .footer-contact-item {
             display: flex;
             gap: 0.75rem;
             align-items: center;
         }
-        
+
         .footer-contact-item i {
             width: 20px;
             color: #853953;
         }
-        
+
         /* Contact Page Specific */
         .contact-info-card {
             background: #FFFFFF;
@@ -367,49 +380,54 @@
             transition: all 0.3s ease;
             border: 1px solid #E8E8E8;
         }
-        
+
         .dark .contact-info-card {
             background: #121212;
             border-color: #2A2A2A;
         }
-        
+
         .contact-info-card:hover {
             transform: translateY(-5px);
             border-color: #853953;
             box-shadow: 0 20px 35px -12px #85395340;
         }
-        
+
         .form-input {
             transition: all 0.3s ease;
         }
-        
+
         .form-input:focus {
             border-color: #853953;
             box-shadow: 0 0 0 3px #85395320;
             outline: none;
         }
-        
+
         .map-card {
             border-radius: 28px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
+
         .map-card:hover {
             transform: scale(1.01);
-            box-shadow: 0 25px 40px -15px rgba(0,0,0,0.2);
+            box-shadow: 0 25px 40px -15px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
+
 <body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
 
     <!-- ========== HEADER - IDENTICAL TO REFERENCE ========== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
         <div class="container mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    <div class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
-                        <span class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
+                    <div
+                        class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
+                        <span
+                            class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span
+                            class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
                     </div>
                 </a>
 
@@ -429,24 +447,29 @@
                         <a href="portfolio.html" class="nav-item">Portfolio</a>
                         <a href="order.html" class="nav-item">Custom Orders</a>
                         <div class="dropdown">
-                            <button class="nav-item flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <button class="nav-item flex items-center gap-1">Services <i
+                                    class="fas fa-chevron-down text-[10px]"></i></button>
                             <div class="dropdown-menu">
-                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
-                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
-                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i> Community</a>
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book
+                                    Session</a>
+                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited
+                                    Drops</a>
+                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i>
+                                    Community</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item active">Contact</a>
-                        
+
                     </div>
-                    
+
                     <div class="flex items-center gap-4 ms-10">
                         <a href="login.html" class="auth-btn login">Login</a>
                         <a href="signup.html" class="auth-btn signup">Sign Up</a>
                     </div>
-                    
+
                     <div class="flex gap-3 ms-6">
-                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i
+                                class="fas fa-sun hidden"></i></button>
                         <button id="rtl-toggle" class="toggle-btn" title="RTL">⇄</button>
                     </div>
                 </div>
@@ -470,8 +493,9 @@
                 <a href="about.html" class="mobile-menu-item">About</a>
                 <a href="portfolio.html" class="mobile-menu-item">Portfolio</a>
                 <a href="order.html" class="mobile-menu-item">Custom Orders</a>
-                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i class="fas fa-chevron-down"></i></button>
+                <div class="mobile-dropdown">
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i
+                            class="fas fa-chevron-down"></i></button>
                     <div class="mobile-dropdown-content">
                         <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
                         <a href="drop.html" class="block px-8 py-2 text-sm">Limited Drops</a>
@@ -480,11 +504,14 @@
                 </div>
                 <a href="contact.html" class="mobile-menu-item active">Contact</a>
                 <div class="flex flex-col gap-3 p-6">
-                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
-                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                    <a href="login.html"
+                        class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign
+                        Up</a>
                 </div>
                 <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
-                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i
+                            class="fas fa-sun hidden"></i></button>
                     <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
                 </div>
             </div>
@@ -506,7 +533,8 @@
                 </h1>
                 <div class="w-24 h-1 bg-stratum mx-auto my-6"></div>
                 <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light">
-                    Whether you're commissioning a custom piece, booking a consultation, or just saying hello — we'd love to hear from you.
+                    Whether you're commissioning a custom piece, booking a consultation, or just saying hello — we'd
+                    love to hear from you.
                 </p>
             </div>
         </div>
@@ -539,7 +567,7 @@
                         <i class="fas fa-envelope text-2xl text-stratum"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Email Us</h3>
-                    <p class="text-gray-500 text-sm">studio@stratumcustom.com</p>
+                    <p class="text-gray-500 text-sm">PrimeSneaks@gmail.com</p>
                     <p class="text-gray-500 text-sm">hello@stratumcustom.com</p>
                     <p class="text-stratum text-xs mt-3 font-mono">Response within 24h</p>
                 </div>
@@ -554,32 +582,39 @@
                 <!-- Contact Form -->
                 <div class="order-2 lg:order-1">
                     <div class="bg-white dark:bg-[#121212] rounded-3xl p-8 shadow-xl border border-stratum/10">
-<h2 class="text-3xl md:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">
-    Send a <span class="text-stratum">Message</span>
-</h2>                        <p class="text-gray-500 text-sm mb-6">Fill out the form below and we'll get back to you within 24 hours.</p>
-                        
+                        <h2 class="text-3xl md:text-4xl font-bold mb-2" style="font-family: 'Playfair Display', serif;">
+                            Send a <span class="text-stratum">Message</span>
+                        </h2>
+                        <p class="text-gray-500 text-sm mb-6">Fill out the form below and we'll get back to you within
+                            24 hours.</p>
+
                         <form id="contactForm" class="space-y-5">
                             <div class="grid md:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-sm font-medium mb-2">First Name *</label>
-                                    <input type="text" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
+                                    <input type="text" required
+                                        class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium mb-2">Last Name *</label>
-                                    <input type="text" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
+                                    <input type="text" required
+                                        class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
                                 </div>
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Email Address *</label>
-                                <input type="email" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
+                                <input type="email" required
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Phone (optional)</label>
-                                <input type="tel" class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
+                                <input type="tel"
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Inquiry Type *</label>
-                                <select required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
+                                <select required
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition">
                                     <option value="">Select an option</option>
                                     <option>Custom Commission</option>
                                     <option>Artist Collaboration</option>
@@ -590,35 +625,36 @@
                             </div>
                             <div>
                                 <label class="block text-sm font-medium mb-2">Message *</label>
-                                <textarea rows="5" required class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition" placeholder="Tell us about your vision..."></textarea>
+                                <textarea rows="5" required
+                                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-stratum transition"
+                                    placeholder="Tell us about your vision..."></textarea>
                             </div>
                             <button type="submit" class="btn-primary w-full justify-center">
                                 <i class="fas fa-paper-plane"></i> Send Message
                             </button>
-                            <p class="text-xs text-gray-400 text-center mt-4">By submitting, you agree to our privacy policy.</p>
+                            <p class="text-xs text-gray-400 text-center mt-4">By submitting, you agree to our privacy
+                                policy.</p>
                         </form>
-                        <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl text-green-700 dark:text-green-300 text-center">
+                        <div id="formSuccess"
+                            class="hidden mt-4 p-4 bg-green-50 dark:bg-green-900/20 rounded-xl text-green-700 dark:text-green-300 text-center">
                             <i class="fas fa-check-circle mr-2"></i> Thanks for reaching out! We'll be in touch soon.
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Map & Hours -->
                 <div class="order-1 lg:order-2 space-y-6">
                     <div class="map-card rounded-3xl overflow-hidden shadow-xl">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1x3305.712365835722!2d-118.243685!3d34.052235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%20Art%20District!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1x3305.712365835722!2d-118.243685!3d34.052235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%20Art%20District!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                             class="w-full h-72 object-cover">
                         </iframe>
                     </div>
-                    
+
                     <div class="bg-white dark:bg-[#121212] rounded-3xl p-8 border border-stratum/10">
-                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-clock text-stratum"></i> Studio Hours</h3>
+                        <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><i
+                                class="fas fa-clock text-stratum"></i> Studio Hours</h3>
                         <div class="space-y-2 text-gray-600 dark:text-gray-300">
                             <div class="flex justify-between py-2 border-b border-gray-100 dark:border-gray-800">
                                 <span>Monday - Friday</span>
@@ -634,18 +670,27 @@
                             </div>
                         </div>
                         <div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
-                            <p class="text-sm text-gray-500"><i class="fas fa-info-circle text-stratum mr-2"></i> Walk-ins welcome during hours, but appointments are recommended for consultations.</p>
+                            <p class="text-sm text-gray-500"><i class="fas fa-info-circle text-stratum mr-2"></i>
+                                Walk-ins welcome during hours, but appointments are recommended for consultations.</p>
                         </div>
                     </div>
-                    
+
                     <!-- Social Quick Links -->
                     <div class="bg-white dark:bg-[#121212] rounded-3xl p-8 border border-stratum/10 text-center">
                         <h3 class="text-xl font-bold mb-4">Follow Our Journey</h3>
                         <div class="flex justify-center gap-4">
-                            <a href="#" class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i class="fab fa-instagram text-xl"></i></a>
-                            <a href="#" class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i class="fab fa-tiktok text-xl"></i></a>
-                            <a href="#" class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i class="fab fa-pinterest text-xl"></i></a>
-                            <a href="#" class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i class="fab fa-discord text-xl"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i
+                                    class="fab fa-instagram text-xl"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i
+                                    class="fab fa-tiktok text-xl"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i
+                                    class="fab fa-pinterest text-xl"></i></a>
+                            <a href="#"
+                                class="w-12 h-12 bg-stratum/10 rounded-full flex items-center justify-center hover:bg-stratum hover:text-white transition text-stratum"><i
+                                    class="fab fa-discord text-xl"></i></a>
                         </div>
                     </div>
                 </div>
@@ -658,7 +703,8 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <span class="text-stratum font-mono text-sm tracking-widest inline-block pb-1">COMMON QUESTIONS</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Quick <span class="text-stratum">Answers</span></h2>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Quick <span
+                        class="text-stratum">Answers</span></h2>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
                 <details class="group bg-canvas-light dark:bg-canvas-dark rounded-xl p-5 border border-stratum/10">
@@ -666,28 +712,32 @@
                         <span>How long does a custom commission take?</span>
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-3 text-gray-500 text-sm pl-2">Typical turnaround is 3-4 weeks from design approval to delivery. Rush options available for an additional fee.</p>
+                    <p class="mt-3 text-gray-500 text-sm pl-2">Typical turnaround is 3-4 weeks from design approval to
+                        delivery. Rush options available for an additional fee.</p>
                 </details>
                 <details class="group bg-canvas-light dark:bg-canvas-dark rounded-xl p-5 border border-stratum/10">
                     <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
                         <span>Do you accept international orders?</span>
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-3 text-gray-500 text-sm pl-2">Yes! We ship worldwide with tracking and insurance. Shipping costs calculated at checkout.</p>
+                    <p class="mt-3 text-gray-500 text-sm pl-2">Yes! We ship worldwide with tracking and insurance.
+                        Shipping costs calculated at checkout.</p>
                 </details>
                 <details class="group bg-canvas-light dark:bg-canvas-dark rounded-xl p-5 border border-stratum/10">
                     <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
                         <span>Can I visit the studio without an appointment?</span>
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-3 text-gray-500 text-sm pl-2">Walk-ins are welcome during open hours, but we recommend booking an appointment for design consultations to ensure artist availability.</p>
+                    <p class="mt-3 text-gray-500 text-sm pl-2">Walk-ins are welcome during open hours, but we recommend
+                        booking an appointment for design consultations to ensure artist availability.</p>
                 </details>
                 <details class="group bg-canvas-light dark:bg-canvas-dark rounded-xl p-5 border border-stratum/10">
                     <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
                         <span>What's your return policy for customs?</span>
                         <i class="fas fa-chevron-down group-open:rotate-180 transition-transform"></i>
                     </summary>
-                    <p class="mt-3 text-gray-500 text-sm pl-2">Each pair is made to order. Returns are not accepted, but we offer touch-up services and quality guarantees for craftsmanship issues.</p>
+                    <p class="mt-3 text-gray-500 text-sm pl-2">Each pair is made to order. Returns are not accepted, but
+                        we offer touch-up services and quality guarantees for craftsmanship issues.</p>
                 </details>
             </div>
         </div>
@@ -697,13 +747,15 @@
     <footer class="pt-16 pb-8 bg-gray-900 dark:bg-[#0A0A0A]">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center md:text-left">
+                <div class="text-center md:text-start">
                     <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
-                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span
+                                class="text-2xl font-display font-bold text-white">Sneaks</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom
+                        hand-painted sneakers since 2019.</p>
                     <div class="flex gap-3 justify-center md:justify-start">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -711,8 +763,8 @@
                         <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Gallery</a></li>
@@ -721,8 +773,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
                         <li><a href="#" class="hover:text-stratum transition block">Custom Commissions</a></li>
@@ -731,8 +783,8 @@
                         <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
                     </ul>
                 </div>
-                
-                <div class="text-center md:text-left">
+
+                <div class="text-center md:text-start">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
                     <ul class="space-y-3 text-gray-400 text-[16px]">
                         <li class="footer-contact-item justify-center md:justify-start">
@@ -745,7 +797,7 @@
                         </li>
                         <li class="footer-contact-item justify-center md:justify-start">
                             <i class="fas fa-envelope"></i>
-                            <span>studio@stratumcustom.com</span>
+                            <span>PrimeSneaks@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -761,14 +813,14 @@
             // Theme Toggle
             const themeBtn = document.getElementById('theme-toggle');
             const themeBtnMob = document.getElementById('theme-toggle-mobile');
-            
+
             const updateThemeUI = (isDark) => {
                 [themeBtn, themeBtnMob].forEach(b => {
-                    if(b) {
+                    if (b) {
                         const moon = b.querySelector('.fa-moon');
                         const sun = b.querySelector('.fa-sun');
-                        if(moon && sun) {
-                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                        if (moon && sun) {
+                            if (isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
                             else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
                         }
                     }
@@ -782,14 +834,14 @@
                 updateThemeUI(isDark);
             };
 
-            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
-            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
-            
-            if(localStorage.getItem('theme') === 'dark') {
+            if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if (themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+
+            if (localStorage.getItem('theme') === 'dark') {
                 document.documentElement.classList.add('dark');
                 updateThemeUI(true);
             }
-            
+
             // RTL Toggle
             const rtlBtn = document.getElementById('rtl-toggle');
             const rtlMob = document.getElementById('rtl-toggle-mobile');
@@ -806,16 +858,16 @@
                 updateRtlUI(isRtl);
             };
 
-            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
-            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+            if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if (rtlMob) rtlMob.addEventListener('click', toggleRtl);
 
-            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
-            
+            if (localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+
             // Mobile Menu
             const mobileToggle = document.getElementById('mobile-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const icon = mobileToggle?.querySelector('i');
-            if(mobileToggle) {
+            if (mobileToggle) {
                 mobileToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('open');
                     icon.classList.toggle('fa-bars');
@@ -823,20 +875,20 @@
                     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
                 });
             }
-            
+
             document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const content = btn.nextElementSibling;
                     content.classList.toggle('show');
                     const chevron = btn.querySelector('.fa-chevron-down');
-                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                    if (chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
                 });
             });
 
             // Touch-friendly Dropdowns
             document.querySelectorAll('.dropdown').forEach(dropdown => {
                 const btn = dropdown.querySelector('button');
-                if(btn) {
+                if (btn) {
                     btn.addEventListener('click', (e) => {
                         if (window.innerWidth >= 1280) {
                             e.preventDefault();
@@ -859,8 +911,8 @@
             // Form Submission Handler
             const contactForm = document.getElementById('contactForm');
             const formSuccess = document.getElementById('formSuccess');
-            
-            if(contactForm) {
+
+            if (contactForm) {
                 contactForm.addEventListener('submit', (e) => {
                     e.preventDefault();
                     formSuccess.classList.remove('hidden');
@@ -873,4 +925,5 @@
         });
     </script>
 </body>
+
 </html>
