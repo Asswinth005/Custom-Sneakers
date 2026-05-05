@@ -298,16 +298,7 @@
             display: inline-block;
         }
 
-        .footer-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 3px;
-            background: #853953;
-        }
+        
 
         @media (min-width: 768px) {
             .footer-heading {
@@ -317,9 +308,7 @@
                 padding-left: 0.75rem;
             }
 
-            .footer-heading::after {
-                display: none;
-            }
+            
         }
 
         .footer-contact-item {
@@ -725,7 +714,7 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
                 <span
-                    class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">WHAT
+                    class="text-stratum font-mono text-sm tracking-widest inline-block pb-1">WHAT
                     TO EXPECT</span>
                 <h2 class="text-3xl md:text-4xl font-display font-bold mt-4">Your <span
                         class="text-stratum">Consultation</span></h2>
