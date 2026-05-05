@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stratum Customs | Bespoke Sneaker Art Studio</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
-    <meta name="description" content="Hand-painted custom sneakers, artist collaborations, and design consultations. Wearable art crafted with passion.">
-    
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='75' font-size='75' text-anchor='middle'%3E👟%3C/text%3E%3C/svg%3E">
+    <meta name="description"
+        content="Hand-painted custom sneakers, artist collaborations, and design consultations. Wearable art crafted with passion.">
+
     <!-- Tailwind CSS -->
     <script src="tailwind.js"></script>
     <script>
@@ -47,24 +50,27 @@
             }
         }
     </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Syne:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        
+
         /* Hide global scrollbar */
         body {
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
+
         body::-webkit-scrollbar {
             display: none;
         }
-        
+
         /* Navigation Styles */
         .nav-item {
             position: relative;
@@ -74,15 +80,16 @@
             transition: color 0.3s ease;
             padding: 0.5rem 0;
         }
-        
-        .nav-item:hover, .nav-item.active {
+
+        .nav-item:hover,
+        .nav-item.active {
             color: #853953;
         }
-        
+
         .nav-item.active {
             font-weight: 700;
         }
-        
+
         .nav-item::after {
             content: '';
             position: absolute;
@@ -93,16 +100,16 @@
             background: #853953;
             transition: width 0.3s ease;
         }
-        
+
         .nav-item:hover::after {
             width: 100%;
         }
-        
+
         /* Dropdown */
         .dropdown {
             position: relative;
         }
-        
+
         .dropdown-menu {
             position: absolute;
             top: 100%;
@@ -117,21 +124,21 @@
             transition: all 0.3s ease;
             z-index: 1000;
             border: 1px solid #85395320;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
-        
+
         .dark .dropdown-menu {
             background: #1A1A1A;
             border-color: #85395340;
         }
-        
+
         .dropdown:hover .dropdown-menu,
         .dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
         }
-        
+
         .dropdown-item {
             display: flex;
             align-items: center;
@@ -140,13 +147,13 @@
             transition: all 0.2s;
             font-size: 0.85rem;
         }
-        
+
         .dropdown-item:hover {
             background: #85395310;
             color: #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item.active {
             background: #85395305;
             color: #853953;
@@ -154,12 +161,12 @@
             border-left: 3px solid #853953;
             padding-left: 1.5rem;
         }
-        
+
         .dropdown-item i {
             width: 18px;
             color: #853953;
         }
-        
+
         /* Auth Buttons */
         .auth-btn {
             padding: 0.5rem 1.5rem;
@@ -168,28 +175,28 @@
             font-size: 0.85rem;
             transition: all 0.3s;
         }
-        
+
         .auth-btn.login {
             background: transparent;
             border: 1.5px solid #853953;
             color: #853953;
         }
-        
+
         .auth-btn.login:hover {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup {
             background: #853953;
             color: white;
         }
-        
+
         .auth-btn.signup:hover {
             background: #5E2A3C;
             transform: translateY(-2px);
         }
-        
+
         /* Toggle Buttons */
         .toggle-btn {
             width: 36px;
@@ -203,18 +210,18 @@
             cursor: pointer;
             transition: all 0.2s;
         }
-        
+
         .dark .toggle-btn {
             background: #2A2A2A;
             color: #FFFFFF;
         }
-        
+
         .toggle-btn:hover {
             background: #853953;
             color: white;
             transform: rotate(15deg);
         }
-        
+
         /* Card Styles */
         .art-card {
             background: #FFFFFF;
@@ -223,18 +230,18 @@
             overflow: hidden;
             border: 1px solid #E8E8E8;
         }
-        
+
         .dark .art-card {
             background: #121212;
             border-color: #2A2A2A;
         }
-        
+
         .art-card:hover {
             transform: translateY(-8px);
             border-color: #853953;
             box-shadow: 0 25px 40px -15px #85395340;
         }
-        
+
         .btn-primary {
             background: #853953;
             color: white;
@@ -246,12 +253,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .btn-primary:hover {
             background: #5E2A3C;
             transform: scale(1.03);
         }
-        
+
         .btn-outline {
             border: 2px solid #853953;
             background: transparent;
@@ -261,12 +268,12 @@
             font-weight: 600;
             transition: all 0.3s;
         }
-        
+
         .btn-outline:hover {
             background: #853953;
             color: white;
         }
-        
+
         /* Shimmer Text */
         .shimmer-text {
             background: linear-gradient(120deg, #853953, #C06080, #853953, #5E2A3C);
@@ -276,12 +283,17 @@
             color: transparent;
             animation: shimmer 3s linear infinite;
         }
-        
+
         @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
         }
-        
+
         /* Social Icons */
         .social-icon {
             width: 40px;
@@ -294,13 +306,13 @@
             transition: all 0.3s;
             color: #853953;
         }
-        
+
         .social-icon:hover {
             background: #853953;
             color: white;
             transform: translateY(-3px);
         }
-        
+
         /* Mobile Menu */
         .mobile-menu {
             background: #FFFFFF;
@@ -308,16 +320,16 @@
             overflow: hidden;
             transition: max-height 0.5s ease;
         }
-        
+
         .dark .mobile-menu {
             background: #0F0F0F;
         }
-        
+
         .mobile-menu.open {
             max-height: 80vh;
             overflow-y: auto;
         }
-        
+
         .mobile-menu-item {
             display: block;
             padding: 1rem 1.5rem;
@@ -325,39 +337,40 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-        
-        .mobile-menu-item.active, .mobile-dropdown-content a.active {
+
+        .mobile-menu-item.active,
+        .mobile-dropdown-content a.active {
             border-left: 4px solid #853953;
             background: #85395308;
             color: #853953;
             font-weight: 700;
         }
-        
+
         .dark .mobile-menu-item {
             border-bottom-color: #2A2A2A;
         }
-        
+
         .mobile-dropdown-content {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s;
             background: #F8F8F8;
         }
-        
+
         .dark .mobile-dropdown-content {
             background: #1A1A1A;
         }
-        
+
         .mobile-dropdown-content.show {
             max-height: 180px;
         }
-        
+
         .footer-heading {
             position: relative;
             padding-bottom: 0.5rem;
             display: inline-block;
         }
-        
+
         .footer-heading::after {
             content: '';
             position: absolute;
@@ -368,7 +381,7 @@
             height: 3px;
             background: #853953;
         }
-        
+
         @media (min-width: 768px) {
             .footer-heading {
                 display: block;
@@ -376,22 +389,23 @@
                 border-left: 3px solid #853953;
                 padding-left: 0.75rem;
             }
+
             .footer-heading::after {
                 display: none;
             }
         }
-        
+
         .footer-contact-item {
             display: flex;
             gap: 0.75rem;
             align-items: center;
         }
-        
+
         .footer-contact-item i {
             width: 20px;
             color: #853953;
         }
-        
+
         /* Collaboration Card */
         .collab-card {
             background: #FFFFFF;
@@ -399,29 +413,34 @@
             transition: all 0.3s;
             border: 1px solid #E8E8E8;
         }
-        
+
         .dark .collab-card {
             background: #121212;
             border-color: #2A2A2A;
         }
-        
+
         .collab-card:hover {
             border-color: #853953;
             transform: translateY(-5px);
         }
     </style>
 </head>
+
 <body class="bg-canvas-light dark:bg-canvas-dark text-gray-900 dark:text-gray-100">
 
     <!-- ========== HEADER - SAME STRUCTURE AS REFERENCE ========== -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
         <div class="container mx-auto px-6">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-3 group">
-                    
-                    <div class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
-                        <span class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
+
+                    <div
+                        class="bg-white dark:bg-[#1A1A1A] px-5 py-2 rounded-full flex items-center shadow-md border border-gray-200 dark:border-[#2A2A2A] transform group-hover:scale-105 transition-transform">
+                        <span
+                            class="text-2xl font-display font-bold text-stratum dark:text-stratum-light">Prime</span><span
+                            class="text-2xl font-display font-bold text-gray-900 dark:text-white">Sneaks</span>
                     </div>
                 </a>
 
@@ -441,23 +460,28 @@
                         <a href="portfolio.html" class="nav-item">Portfolio</a>
                         <a href="order.html" class="nav-item">Custom Orders</a>
                         <div class="dropdown">
-                            <button class="nav-item flex items-center gap-1">Services <i class="fas fa-chevron-down text-[10px]"></i></button>
+                            <button class="nav-item flex items-center gap-1">Services <i
+                                    class="fas fa-chevron-down text-[10px]"></i></button>
                             <div class="dropdown-menu">
-                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book Session</a>
-                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited Drops</a>
-                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i> Community</a>
+                                <a href="book.html" class="dropdown-item"><i class="fas fa-calendar-alt"></i> Book
+                                    Session</a>
+                                <a href="drop.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> Limited
+                                    Drops</a>
+                                <a href="community.html" class="dropdown-item"><i class="fas fa-users"></i>
+                                    Community</a>
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item">Contact</a>
                     </div>
-                    
+
                     <div class="flex items-center gap-3 ml-8">
                         <a href="login.html" class="auth-btn login">Login</a>
                         <a href="signup.html" class="auth-btn signup">Sign Up</a>
                     </div>
-                    
+
                     <div class="flex gap-2 ml-4">
-                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                        <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i
+                                class="fas fa-sun hidden"></i></button>
                         <button id="rtl-toggle" class="toggle-btn" title="RTL">⇄</button>
                     </div>
                 </div>
@@ -482,7 +506,8 @@
                 <a href="portfolio.html" class="mobile-menu-item">Portfolio</a>
                 <a href="order.html" class="mobile-menu-item">Custom Orders</a>
                 <div class="mobile-dropdown">
-                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i class="fas fa-chevron-down"></i></button>
+                    <button class="mobile-dropdown-btn flex justify-between w-full mobile-menu-item">Services <i
+                            class="fas fa-chevron-down"></i></button>
                     <div class="mobile-dropdown-content">
                         <a href="book.html" class="block px-8 py-2 text-sm">Book Session</a>
                         <a href="drop.html" class="block px-8 py-2 text-sm">Limited Drops</a>
@@ -491,11 +516,14 @@
                 </div>
                 <a href="contact.html" class="mobile-menu-item">Contact</a>
                 <div class="flex flex-col gap-3 p-6">
-                    <a href="login.html" class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
-                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign Up</a>
+                    <a href="login.html"
+                        class="text-center py-3 border border-stratum rounded-full text-stratum font-semibold">Login</a>
+                    <a href="signup.html" class="text-center py-3 bg-stratum text-white rounded-full font-semibold">Sign
+                        Up</a>
                 </div>
                 <div class="flex justify-center gap-3 p-6 border-t border-stratum/20">
-                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i class="fas fa-sun hidden"></i></button>
+                    <button id="theme-toggle-mobile" class="toggle-btn"><i class="fas fa-moon"></i><i
+                            class="fas fa-sun hidden"></i></button>
                     <button id="rtl-toggle-mobile" class="toggle-btn">⇄</button>
                 </div>
             </div>
@@ -504,7 +532,10 @@
 
     <!-- ========== HERO SECTION ========== -->
     <section class="relative pt-40 pb-28 md:pt-52 md:pb-36 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-stratum/5 via-transparent to-transparent"></div>
+        <img src="assest/s3.jpg" alt="Hero Background"
+            class="absolute inset-0 w-full h-full object-cover object-center z-0">
+        <div class="absolute inset-0 bg-white/80 dark:bg-[#0F0F0F]/80 backdrop-blur-sm z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-stratum/10 via-transparent to-transparent"></div>
         <div class="absolute top-40 right-10 w-72 h-72 bg-stratum/10 rounded-full blur-3xl animate-pulse-slow"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-3xl mx-auto text-center">
@@ -532,80 +563,133 @@
         </div>
     </section>
 
+    <!-- ========== STATS SECTION ========== -->
+    <section class="py-12 bg-stratum/5 dark:bg-stratum/10 border-b border-stratum/10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                <div
+                    class="p-6 rounded-2xl bg-white dark:bg-[#1A1A1A] shadow-sm border border-gray-100 dark:border-[#2A2A2A]">
+                    <span class="font-bold text-4xl text-stratum block mb-2">200+</span>
+                    <span class="text-gray-500 font-medium">Pairs Created</span>
+                </div>
+                <div
+                    class="p-6 rounded-2xl bg-white dark:bg-[#1A1A1A] shadow-sm border border-gray-100 dark:border-[#2A2A2A]">
+                    <span class="font-bold text-4xl text-stratum block mb-2">12</span>
+                    <span class="text-gray-500 font-medium">Exhibitions</span>
+                </div>
+                <div
+                    class="p-6 rounded-2xl bg-white dark:bg-[#1A1A1A] shadow-sm border border-gray-100 dark:border-[#2A2A2A]">
+                    <span class="font-bold text-4xl text-stratum block mb-2">8</span>
+                    <span class="text-gray-500 font-medium">Collaborations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== FEATURED DROPS - GRID SECTION WITH IMAGES ========== -->
     <section class="py-24 bg-white dark:bg-canvas-charcoal">
         <div class="container mx-auto px-6">
             <div class="text-center mb-14">
-                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">EXCLUSIVE RELEASES</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Limited Edition <span class="text-stratum">Drops</span></h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Iconic silhouettes reimagined by our resident artists</p>
+                <span
+                    class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">EXCLUSIVE
+                    RELEASES</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Limited Edition <span
+                        class="text-stratum">Drops</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Iconic silhouettes reimagined by our
+                    resident artists</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
                 <!-- Card 1 - Royal Heritage -->
                 <div class="art-card group">
                     <div class="h-64 overflow-hidden relative img-overlay">
-                        <img src="/assest/royal.jpg" alt="Royal Heritage Air Force 1 Custom Sneaker" class="product-img w-full h-full object-cover opacity-90 group-hover:opacity-100">
+                        <img src="/assest/royal.jpg" alt="Royal Heritage Air Force 1 Custom Sneaker"
+                            class="product-img w-full h-full object-cover opacity-90 group-hover:opacity-100">
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start">
-                            <div><h3 class="font-bold text-xl"> Heritage</h3><p class="text-gray-500 text-sm">Air Force 1</p></div>
+                            <div>
+                                <h3 class="font-bold text-xl"> Heritage</h3>
+                                <p class="text-gray-500 text-sm">Air Force 1</p>
+                            </div>
                             <span class="text-stratum font-bold">$489</span>
                         </div>
-                        <button class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View Artwork</button>
+                        <button
+                            class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View
+                            Artwork</button>
                     </div>
                 </div>
                 <!-- Card 2 - Neon Samurai -->
                 <div class="art-card group">
                     <div class="h-64 overflow-hidden relative bg-gradient-to-br from-amber-700 to-stratum-dark">
-                        <img src="/assest/sam.jpg" alt="Neon Samurai Dunk Low Custom Sneaker" class="product-img w-full h-full object-cover">
+                        <img src="/assest/sam.jpg" alt="Neon Samurai Dunk Low Custom Sneaker"
+                            class="product-img w-full h-full object-cover">
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start">
-                            <div><h3 class="font-bold text-xl">Neon Samurai</h3><p class="text-gray-500 text-sm">Dunk Low</p></div>
+                            <div>
+                                <h3 class="font-bold text-xl">Neon Samurai</h3>
+                                <p class="text-gray-500 text-sm">Dunk Low</p>
+                            </div>
                             <span class="text-stratum font-bold">$579</span>
                         </div>
-                        <button class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View Artwork</button>
+                        <button
+                            class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View
+                            Artwork</button>
                     </div>
                 </div>
                 <!-- Card 3 - Velvet Noir -->
                 <div class="art-card group">
                     <div class="h-64 overflow-hidden relative bg-gradient-to-br from-purple-800 to-stratum">
-                        <img src="/assest/s2.jpg" alt="Velvet Noir Jordan 1 High Custom Sneaker" class="product-img w-full h-full object-cover">
+                        <img src="/assest/s2.jpg" alt="Velvet Noir Jordan 1 High Custom Sneaker"
+                            class="product-img w-full h-full object-cover">
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start">
-                            <div><h3 class="font-bold text-xl">Velvet Noir</h3><p class="text-gray-500 text-sm">Jordan 1 High</p></div>
+                            <div>
+                                <h3 class="font-bold text-xl">Velvet Noir</h3>
+                                <p class="text-gray-500 text-sm">Jordan 1 High</p>
+                            </div>
                             <span class="text-stratum font-bold">$729</span>
                         </div>
-                        <button class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View Artwork</button>
+                        <button
+                            class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View
+                            Artwork</button>
                     </div>
                 </div>
                 <!-- Card 4 - Emerald Luxe -->
                 <div class="art-card group">
                     <div class="h-64 overflow-hidden relative bg-gradient-to-br from-emerald-800 to-stratum-dark">
-                        <img src="/assest/s3.jpg" alt="Emerald Luxe Yeezy 350 Custom Sneaker" class="product-img w-full h-full object-cover">
+                        <img src="/assest/s3.jpg" alt="Emerald Luxe Yeezy 350 Custom Sneaker"
+                            class="product-img w-full h-full object-cover">
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start">
-                            <div><h3 class="font-bold text-xl">Emerald Luxe</h3><p class="text-gray-500 text-sm">Yeezy 350</p></div>
+                            <div>
+                                <h3 class="font-bold text-xl">Emerald Luxe</h3>
+                                <p class="text-gray-500 text-sm">Yeezy 350</p>
+                            </div>
                             <span class="text-stratum font-bold">$639</span>
                         </div>
-                        <button class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View Artwork</button>
+                        <button
+                            class="w-full mt-4 py-2 border border-stratum/40 rounded-full text-sm hover:bg-stratum hover:text-white transition">View
+                            Artwork</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-        <section class="py-24 bg-canvas-light dark:bg-canvas-dark">
+    <section class="py-24 bg-canvas-light dark:bg-canvas-dark">
         <div class="container mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="order-2 lg:order-1">
                     <div class="relative">
                         <div class="rounded-2xl overflow-hidden shadow-xl">
                             <div class="bg-gradient-to-tr from-stratum to-stratum-light p-1 rounded-2xl">
-                                <div class="bg-gray-100 dark:bg-gray-800 rounded-xl h-80 flex items-center justify-center overflow-hidden">
-                                    <img src="/assest/cus1.jpg" alt="Custom sneaker design consultation" class="w-full h-full object-cover">
+                                <div
+                                    class="bg-gray-100 dark:bg-gray-800 rounded-xl h-80 flex items-center justify-center overflow-hidden">
+                                    <img src="/assest/cus1.jpg" alt="Custom sneaker design consultation"
+                                        class="w-full h-full object-cover">
                                 </div>
                             </div>
                         </div>
@@ -614,14 +698,21 @@
                 </div>
                 <div class="order-1 lg:order-2">
                     <span class="text-stratum font-mono text-sm tracking-wider">YOUR VISION</span>
-<h2 class="text-4xl md:text-6xl mt-3 tracking-wide leading-none" style="font-family: 'Bebas Neue', sans-serif;">
-    Custom Design <span class="text-stratum">Consultation</span>
-</h2>                    <div class="w-16 h-1 bg-stratum my-5"></div>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">Work 1-on-1 with our lead artists to bring your vision to life. From concept sketches to final lacquer, we guide you through every step.</p>
+                    <h2 class="text-4xl md:text-6xl mt-3 tracking-wide leading-none"
+                        style="font-family: 'Bebas Neue', sans-serif;">
+                        Custom Design <span class="text-stratum">Consultation</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-stratum my-5"></div>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">Work 1-on-1 with our lead artists
+                        to bring your vision to life. From concept sketches to final lacquer, we guide you through every
+                        step.</p>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i> Personalized design session</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i> Material & color consultation</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i> Progress updates & approval</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i>
+                            Personalized design session</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i> Material &
+                            color consultation</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-stratum"></i> Progress
+                            updates & approval</li>
                     </ul>
                     <button class="btn-primary"><i class="fas fa-calendar-alt"></i> Book Free Consultation</button>
                 </div>
@@ -633,32 +724,17 @@
     <section class="py-20 bg-white dark:bg-canvas-charcoal">
         <div class="container mx-auto px-6 text-center">
             <i class="fas fa-quote-left text-4xl text-stratum/30 mb-6"></i>
-            <p class="text-2xl md:text-3xl font-light italic max-w-3xl mx-auto">"I don't just paint sneakers — I create stories you can wear. Every brushstroke carries emotion, identity, and rebellion."</p>
+            <p class="text-2xl md:text-3xl font-light italic max-w-3xl mx-auto">"I don't just paint sneakers — I create
+                stories you can wear. Every brushstroke carries emotion, identity, and rebellion."</p>
             <div class="mt-8 flex items-center justify-center gap-4">
-                <div class="w-14 h-14 rounded-full bg-stratum flex items-center justify-center text-white text-xl font-bold">EV</div>
+                <div
+                    class="w-14 h-14 rounded-full bg-stratum flex items-center justify-center text-white text-xl font-bold">
+                    EV</div>
                 <div class="text-left">
                     <p class="font-bold text-lg">Elena Varela</p>
                     <p class="text-stratum text-sm">Lead Artist & Founder</p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 text-center">
-
-    <div class="p-4 rounded-xl bg-white dark:bg-[#1A1A1A] shadow">
-        <span class="font-bold text-2xl text-stratum block">200+</span>
-        <span class="text-gray-500">Pairs Created</span>
-    </div>
-
-    <div class="p-4 rounded-xl bg-white dark:bg-[#1A1A1A] shadow">
-        <span class="font-bold text-2xl text-stratum block">12</span>
-        <span class="text-gray-500">Exhibitions</span>
-    </div>
-
-    <div class="p-4 rounded-xl bg-white dark:bg-[#1A1A1A] shadow">
-        <span class="font-bold text-2xl text-stratum block">8</span>
-        <span class="text-gray-500">Collaborations</span>
-    </div>
-
-</div>
         </div>
     </section>
 
@@ -666,9 +742,13 @@
     <section class="py-24 bg-canvas-light dark:bg-canvas-dark">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <span class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">CROSSOVER SERIES</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Artist <span class="text-stratum">Collaborations</span></h2>
-                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Limited edition capsules with world-renowned creators</p>
+                <span
+                    class="text-stratum font-mono text-sm tracking-widest border-b-2 border-stratum inline-block pb-1">CROSSOVER
+                    SERIES</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold mt-4">Artist <span
+                        class="text-stratum">Collaborations</span></h2>
+                <p class="text-gray-500 dark:text-gray-400 max-w-xl mx-auto mt-3">Limited edition capsules with
+                    world-renowned creators</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
                 <!-- Collab 1 -->
@@ -679,7 +759,9 @@
                     <h3 class="text-xl font-bold mb-2">Studio 88 × Stratum</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Tokyo-based graffiti collective</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">12 unique designs • 150 pairs worldwide</p>
-                    <div class="mt-4 inline-block px-4 py-1 bg-stratum/10 text-stratum rounded-full text-xs font-semibold">SOLD OUT</div>
+                    <div
+                        class="mt-4 inline-block px-4 py-1 bg-stratum/10 text-stratum rounded-full text-xs font-semibold">
+                        SOLD OUT</div>
                 </div>
                 <!-- Collab 2 -->
                 <div class="collab-card p-6 text-center">
@@ -689,7 +771,8 @@
                     <h3 class="text-xl font-bold mb-2">Manga Masters</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Featuring Junji Yamamoto</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">Hand-illustrated anime series • 300 pairs</p>
-                    <div class="mt-4 inline-block px-4 py-1 bg-stratum text-white rounded-full text-xs font-semibold">DROPS APR 28</div>
+                    <div class="mt-4 inline-block px-4 py-1 bg-stratum text-white rounded-full text-xs font-semibold">
+                        DROPS APR 28</div>
                 </div>
                 <!-- Collab 3 -->
                 <div class="collab-card p-6 text-center">
@@ -699,11 +782,14 @@
                     <h3 class="text-xl font-bold mb-2">Rhythm & Sole</h3>
                     <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Grammy-winning producer collab</p>
                     <p class="text-sm text-gray-600 dark:text-gray-300">Soundwave-integrated design • 200 pairs</p>
-                    <div class="mt-4 inline-block px-4 py-1 bg-stratum/10 text-stratum rounded-full text-xs font-semibold">PRE-ORDER</div>
+                    <div
+                        class="mt-4 inline-block px-4 py-1 bg-stratum/10 text-stratum rounded-full text-xs font-semibold">
+                        PRE-ORDER</div>
                 </div>
             </div>
             <div class="text-center mt-10">
-                <button class="btn-outline text-sm">View All Collaborations <i class="fas fa-arrow-right ml-2"></i></button>
+                <button class="btn-outline text-sm">View All Collaborations <i
+                        class="fas fa-arrow-right ml-2"></i></button>
             </div>
         </div>
     </section>
@@ -712,10 +798,13 @@
     <section class="py-20 bg-stratum">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-3">Join The Drop List</h2>
-            <p class="text-stratum-soft max-w-md mx-auto mb-6">Be first to access exclusive artist collabs & limited releases.</p>
+            <p class="text-stratum-soft max-w-md mx-auto mb-6">Be first to access exclusive artist collabs & limited
+                releases.</p>
             <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" placeholder="Your email address" class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
-                <button class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Subscribe</button>
+                <input type="email" placeholder="Your email address"
+                    class="flex-1 px-5 py-3 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-white">
+                <button
+                    class="bg-white text-stratum px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition">Subscribe</button>
             </div>
         </div>
     </section>
@@ -727,10 +816,12 @@
                 <div class="text-center md:text-left">
                     <div class="flex items-center gap-3 mb-6 justify-center md:justify-start">
                         <div class="bg-stratum/10 px-5 py-2 rounded-full border border-stratum/30 flex items-center">
-                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span class="text-2xl font-display font-bold text-white">Sneaks</span>
+                            <span class="text-2xl font-display font-bold text-stratum">Prime</span><span
+                                class="text-2xl font-display font-bold text-white">Sneaks</span>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom hand-painted sneakers since 2019.</p>
+                    <p class="text-gray-400 text-[16px] leading-relaxed mb-6">Where streetwear meets fine art. Custom
+                        hand-painted sneakers since 2019.</p>
                     <div class="flex gap-3 justify-center md:justify-start">
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
@@ -738,7 +829,7 @@
                         <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="text-center md:text-left">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Explore</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
@@ -748,7 +839,7 @@
                         <li><a href="#" class="hover:text-stratum transition block">Press & Features</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="text-center md:text-left">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Services</h3>
                     <ul class="space-y-2 text-gray-400 text-[16px]">
@@ -758,7 +849,7 @@
                         <li><a href="#" class="hover:text-stratum transition block">Wholesale Program</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="text-center md:text-left">
                     <h3 class="text-white text-xl font-display font-bold mb-5 footer-heading">Studio</h3>
                     <ul class="space-y-3 text-gray-400 text-[16px]">
@@ -788,14 +879,14 @@
             // Theme Toggle
             const themeBtn = document.getElementById('theme-toggle');
             const themeBtnMob = document.getElementById('theme-toggle-mobile');
-            
+
             const updateThemeUI = (isDark) => {
                 [themeBtn, themeBtnMob].forEach(b => {
-                    if(b) {
+                    if (b) {
                         const moon = b.querySelector('.fa-moon');
                         const sun = b.querySelector('.fa-sun');
-                        if(moon && sun) {
-                            if(isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
+                        if (moon && sun) {
+                            if (isDark) { moon.classList.add('hidden'); sun.classList.remove('hidden'); }
                             else { moon.classList.remove('hidden'); sun.classList.add('hidden'); }
                         }
                     }
@@ -809,14 +900,14 @@
                 updateThemeUI(isDark);
             };
 
-            if(themeBtn) themeBtn.addEventListener('click', toggleTheme);
-            if(themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
-            
-            if(localStorage.getItem('theme') === 'dark') {
+            if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+            if (themeBtnMob) themeBtnMob.addEventListener('click', toggleTheme);
+
+            if (localStorage.getItem('theme') === 'dark') {
                 document.documentElement.classList.add('dark');
                 updateThemeUI(true);
             }
-            
+
             // RTL Toggle
             const rtlBtn = document.getElementById('rtl-toggle');
             const rtlMob = document.getElementById('rtl-toggle-mobile');
@@ -833,16 +924,16 @@
                 updateRtlUI(isRtl);
             };
 
-            if(rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
-            if(rtlMob) rtlMob.addEventListener('click', toggleRtl);
+            if (rtlBtn) rtlBtn.addEventListener('click', toggleRtl);
+            if (rtlMob) rtlMob.addEventListener('click', toggleRtl);
 
-            if(localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
-            
+            if (localStorage.getItem('dir') === 'rtl') updateRtlUI(true);
+
             // Mobile Menu
             const mobileToggle = document.getElementById('mobile-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
             const icon = mobileToggle?.querySelector('i');
-            if(mobileToggle) {
+            if (mobileToggle) {
                 mobileToggle.addEventListener('click', () => {
                     mobileMenu.classList.toggle('open');
                     icon.classList.toggle('fa-bars');
@@ -850,13 +941,13 @@
                     document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
                 });
             }
-            
+
             document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const content = btn.nextElementSibling;
                     content.classList.toggle('show');
                     const chevron = btn.querySelector('.fa-chevron-down');
-                    if(chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
+                    if (chevron) chevron.style.transform = content.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0)';
                 });
             });
 
@@ -885,4 +976,5 @@
         });
     </script>
 </body>
-</html>  
+
+</html>
