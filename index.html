@@ -421,7 +421,7 @@
     <nav
         class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-canvas-dark/95 backdrop-blur-md border-b border-stratum/30">
         <div class="container mx-auto px-6">
-            <div class="flex items-center justify-between h-20">
+            <div class="flex items-center justify-between h-20 relative">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center space-x-3 group">
 
@@ -434,7 +434,7 @@
                 </a>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden xl:flex items-center">
+                <div class="hidden xl:flex items-center justify-center absolute left-1/2 -translate-x-1/2">
                     <div class="flex items-center gap-8">
                         <div class="dropdown">
                             <button class="nav-item active flex items-center gap-1">
@@ -462,13 +462,13 @@
                         </div>
                         <a href="contact.html" class="nav-item">Contact</a>
                     </div>
+                </div>
 
-                    <div class="flex gap-3 ms-6">
+                <div class="hidden xl:flex items-center gap-3 ml-auto mr-4">
                         <button id="theme-toggle" class="toggle-btn" title="Theme"><i class="fas fa-moon"></i><i
                                 class="fas fa-sun hidden"></i></button>
                         <button id="rtl-toggle" class="toggle-btn" title="RTL">⇄</button>
                     </div>
-                </div>
 
                 <button id="mobile-toggle" class="xl:hidden text-gray-800 dark:text-white p-2 text-2xl">
                     <i class="fas fa-bars"></i>
